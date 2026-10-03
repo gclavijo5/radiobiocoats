@@ -6,462 +6,62 @@
 <title>RADIOBIOCOATS – Radiopaque bioactive glass coatings</title>
 <meta name="description" content="RADIOBIOCOATS develops radiopaque bioactive glass coatings for biomedical implants. FunGlass, Alexander Dubček University of Trenčín, 2024–2026.">
 <link rel="icon" href="assets/img/logo-mark.png">
-<style>
-:root{
-  --rb-ink:#524f7b; --rb-purple:#595680; --rb-mid:#757295; --rb-light:#a8a7bd;
-  --rb-tint:rgba(117,114,149,.08); --rb-tint2:rgba(117,114,149,.16); --rb-line:rgba(82,79,123,.22);
-  --text:#2b2a3a; --bg:#fcfcfe;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-html[lang="en"] .es, html[lang="es"] .en{display:none}
-a{color:var(--rb-purple)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--rb-purple);outline-offset:2px}
-img{max-width:100%;height:auto}
-.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
-header.top{position:sticky;top:0;z-index:10;background:rgba(252,252,254,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rb-line)}
-header.top .wrap{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:.6rem;padding-bottom:.6rem}
-header.top .brand img{height:44px;width:auto;display:block}
-nav{display:flex;flex-wrap:wrap;gap:.2rem 1rem;flex:1;font-size:.92rem}
-nav a{text-decoration:none;color:var(--rb-ink)}
-nav a:hover{text-decoration:underline}
-#langBtn{border:1px solid var(--rb-purple);background:#fff;color:var(--rb-purple);border-radius:999px;padding:.3rem .9rem;font-weight:600;cursor:pointer}
-.hero{padding:2.5rem 0 1.5rem}
-.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;color:var(--rb-ink);margin:0 0 .6rem;max-width:22ch}
-.hero p.lead{font-size:1.15rem;max-width:60ch;margin:0 0 1.2rem}
-.hero .meta{color:var(--rb-mid);font-size:.95rem;margin-bottom:1.5rem}
-.hero figure{margin:0}
-.hero figure img{display:block;width:100%;border-radius:12px}
-.credit{font-size:.78rem;color:var(--rb-mid);margin-top:.4rem;display:block}
-section{padding:2.5rem 0;border-top:1px solid var(--rb-line)}
-section h2{color:var(--rb-ink);font-size:1.6rem;margin:0 0 1rem}
-section h3{color:var(--rb-ink);font-size:1.1rem;margin:1.5rem 0 .5rem}
-.prose{max-width:70ch}
-.routes{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:1rem}
-.route{background:var(--rb-tint);border-left:4px solid var(--rb-purple);padding:1rem 1.1rem;border-radius:0 8px 8px 0}
-.route h3{margin-top:0}
-.stats{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-top:1rem}
-.stat{border:1px solid var(--rb-line);border-radius:10px;padding:1rem;background:#fff}
-.stat b{display:block;font-size:2rem;color:var(--rb-purple);line-height:1.1}
-.stat span{font-size:.92rem}
-.rb-figs{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:1.2rem 0}
-.rb-fig{margin:0;background:var(--rb-tint);border:1px solid var(--rb-line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
-.rb-fig a.img{display:block;background:#fff}
-.rb-fig img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain}
-.rb-fig figcaption{padding:.8rem 1rem 1rem;font-size:.9rem;line-height:1.45}
-.rb-fig .credit a{color:inherit}
-.pubs{padding-left:1.25rem;max-width:80ch}
-.pubs li{margin-bottom:.9rem}
-.talks{list-style:none;padding:0;max-width:80ch}
-.talks li{padding:.6rem 0;border-bottom:1px dashed var(--rb-line)}
-.talks .when{color:var(--rb-mid);font-size:.88rem;display:block}
-.video{position:relative;max-width:820px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#222 url("assets/img/hero.jpg") center/cover}
-.video button{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;background:rgba(40,38,70,.55);color:#fff;font-size:1.05rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem}
-.video button .play{width:72px;height:72px;border-radius:50%;background:var(--rb-purple);display:flex;align-items:center;justify-content:center;font-size:1.8rem}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.news{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{border:1px solid var(--rb-line);border-radius:10px;padding:1rem 1.1rem;background:#fff}
-.card .when{color:var(--rb-mid);font-size:.85rem}
-.card h3{margin:.3rem 0 .4rem;font-size:1.02rem}
-.logo-row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin:.6rem 0 1rem}
-.logo{background:#fff;border:1px solid var(--rb-line);border-radius:8px;padding:.6rem .9rem;display:flex;align-items:center;justify-content:center;min-height:84px}
-.logo img{display:block;height:56px;width:auto;max-width:220px}
-.logo.eu img{height:72px;max-width:none}
-.note{font-size:.88rem;max-width:80ch}
-footer{background:var(--rb-ink);color:#fff;padding:2rem 0;margin-top:2rem;font-size:.9rem}
-footer a{color:#fff}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/img/logo.png" alt="RADIOBIOCOATS – to safely see beyond"></a>
-    <nav aria-label="Main">
-      <a href="#why"><span class="en">Why it matters</span><span class="es">Por qué importa</span></a>
-      <a href="#what"><span class="en">What we did</span><span class="es">Qué hicimos</span></a>
-      <a href="#results"><span class="en">Results</span><span class="es">Resultados</span></a>
-      <a href="#publications"><span class="en">Publications</span><span class="es">Publicaciones</span></a>
-      <a href="#video"><span class="en">Video</span><span class="es">Vídeo</span></a>
-      <a href="#news"><span class="en">News</span><span class="es">Noticias</span></a>
-      <a href="#funding"><span class="en">Funding</span><span class="es">Financiación</span></a>
-      <a href="#contact"><span class="en">Contact</span><span class="es">Contacto</span></a>
-    </nav>
-    <button id="langBtn" type="button" aria-label="Switch language / Cambiar idioma">ES</button>
-  </div>
-</header>
-
-<main id="top">
-
-<div class="wrap hero">
-  <h1><span class="en">Radiopaque bioactive glass coatings for implants</span><span class="es">Recubrimientos de vidrio bioactivo radiopaco para implantes</span></h1>
-  <p class="lead">
-    <span class="en">RADIOBIOCOATS develops bioactive glass coatings that bond to bone and stay visible on X-ray images.</span>
-    <span class="es">RADIOBIOCOATS desarrolla recubrimientos de vidrio bioactivo que se unen al hueso y siguen siendo visibles en las radiografías.</span>
-  </p>
-  <p class="meta">
-    <span class="en">FunGlass, Alexander Dubček University of Trenčín, Slovakia. June 2024 – May 2026.</span>
-    <span class="es">FunGlass, Universidad Alexander Dubček de Trenčín, Eslovaquia. Junio 2024 – mayo 2026.</span>
-  </p>
-  <figure>
-    <img src="assets/img/hero.jpg" width="1280" height="570" alt="Collage of RADIOBIOCOATS work: glass melting, powders, plasma spraying with a robot, radiographs of glass pellets, coated samples, electron micrographs and cell-culture plates.">
-    <figcaption class="credit">
-      <span class="en">Photos: G. A. Clavijo-Mejía, FunGlass, Alexander Dubček University of Trenčín. All rights reserved.</span>
-      <span class="es">Fotos: G. A. Clavijo-Mejía, FunGlass, Universidad Alexander Dubček de Trenčín. Todos los derechos reservados.</span>
-    </figcaption>
-  </figure>
-</div>
-
-<section id="why">
-  <div class="wrap prose">
-    <h2><span class="en">Why it matters</span><span class="es">Por qué importa</span></h2>
-    <p>
-      <span class="en">Bioactive glass bonds to bone and helps it regenerate. Standard bioactive glass looks almost like bone on a radiograph, so doctors cannot easily see where a coating sits or how it changes over time.</span>
-      <span class="es">El vidrio bioactivo se une al hueso y ayuda a regenerarlo. El vidrio bioactivo convencional se ve casi igual que el hueso en una radiografía, así que es difícil saber dónde está un recubrimiento o cómo cambia con el tiempo.</span>
-    </p>
-    <p>
-      <span class="en">Bismuth oxide absorbs X-rays strongly. RADIOBIOCOATS adds it to the glass so that coated implants can be followed with ordinary X-ray imaging.</span>
-      <span class="es">El óxido de bismuto absorbe con fuerza los rayos X. RADIOBIOCOATS lo incorpora al vidrio para que los implantes recubiertos puedan seguirse con radiografías convencionales.</span>
-    </p>
-  </div>
-</section>
-
-<section id="what">
-  <div class="wrap">
-    <h2><span class="en">What we did</span><span class="es">Qué hicimos</span></h2>
-    <p class="prose">
-      <span class="en">The project produced bismuth-containing silicate (Bi-45S5) and borate (Bi-13-93B3) bioactive glasses and deposited them on medical-grade titanium alloy by three routes.</span>
-      <span class="es">El proyecto produjo vidrios bioactivos de silicato (Bi-45S5) y de borato (Bi-13-93B3) con bismuto y los depositó sobre aleación de titanio de grado médico por tres vías.</span>
-    </p>
-    <div class="routes">
-      <div class="route">
-        <h3><span class="en">Atmospheric plasma spraying</span><span class="es">Proyección por plasma atmosférico</span></h3>
-        <p><span class="en">A plasma jet melts the glass particles and builds dense coatings. A statistical design showed that spray distance explains 31–53 % of the variation in hardness, porosity and thickness.</span><span class="es">Un chorro de plasma funde las partículas de vidrio y forma recubrimientos densos. Un diseño estadístico mostró que la distancia de proyección explica el 31–53 % de la variación en dureza, porosidad y espesor.</span></p>
-      </div>
-      <div class="route">
-        <h3><span class="en">Electrophoretic deposition</span><span class="es">Deposición electroforética</span></h3>
-        <p><span class="en">An electric field deposits PEEK/glass composite layers at room temperature. A heat treatment at 350 °C then consolidates the coating.</span><span class="es">Un campo eléctrico deposita capas compuestas de PEEK y vidrio a temperatura ambiente. Después, un tratamiento térmico a 350 °C consolida el recubrimiento.</span></p>
-      </div>
-      <div class="route">
-        <h3><span class="en">Spray coating</span><span class="es">Spray coating</span></h3>
-        <p><span class="en">A preceramic polymer binder carries the glass particles onto the metal in multilayer passes at low temperature.</span><span class="es">Un aglutinante polimérico precerámico lleva las partículas de vidrio al metal en varias pasadas a baja temperatura.</span></p>
-      </div>
-      <div class="route">
-        <h3><span class="en">Radiopacity and biology</span><span class="es">Radiopacidad y biología</span></h3>
-        <p><span class="en">A protocol based on ISO 13116 measures coating radiopacity against an aluminium step wedge. Standardised cell and antibacterial tests evaluate how the coatings interact with bone cells and bacteria.</span><span class="es">Un protocolo basado en la ISO 13116 mide la radiopacidad de los recubrimientos frente a una cuña escalonada de aluminio. Ensayos celulares y antibacterianos estandarizados evalúan la interacción de los recubrimientos con células óseas y bacterias.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="results">
-  <div class="wrap">
-    <h2><span class="en">Results</span><span class="es">Resultados</span></h2>
-    <div class="stats">
-      <div class="stat"><b>4.2×</b><span class="en">Bi<sub>2</sub>O<sub>3</sub> raised the radiopacity of 45S5 glass up to 4.2 times.</span><span class="es">El Bi<sub>2</sub>O<sub>3</sub> aumentó hasta 4,2 veces la radiopacidad del vidrio 45S5.</span></div>
-      <div class="stat"><b>~14×</b><span class="en">Bi<sub>2</sub>O<sub>3</sub> raised the radiopacity of 13-93B3 borate glass about 14 times.</span><span class="es">El Bi<sub>2</sub>O<sub>3</sub> aumentó unas 14 veces la radiopacidad del vidrio borato 13-93B3.</span></div>
-      <div class="stat"><b>3</b><span class="en">Coating routes established: APS, EPD and spray coating.</span><span class="es">Vías de recubrimiento establecidas: APS, EPD y spray coating.</span></div>
-      <div class="stat"><b>4 + 1 + 1</b><span class="en">Peer-reviewed papers, a granted patent and a PhD thesis.</span><span class="es">Artículos revisados por pares, una patente concedida y una tesis doctoral.</span></div>
-    </div>
-
-    <h3><span class="en">Published figures</span><span class="es">Figuras publicadas</span></h3>
-    <div class="rb-figs">
-      <!-- TODO: confirmar la licencia de Results in Surfaces and Interfaces (CC BY o CC BY-NC-ND) -->
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-aps-topview.jpg"><img src="assets/img/fig-aps-topview.jpg" loading="lazy" alt="Grid of nine electron micrographs of plasma-sprayed coating surfaces, arranged by plasma power and spray distance."></a>
-        <figcaption>
-          <span class="en">Plasma power and spray distance shape the surface of the bismuth-containing 45S5 glass coatings.</span>
-          <span class="es">La potencia del plasma y la distancia de proyección definen la superficie de los recubrimientos de vidrio 45S5 con bismuto.</span>
-          <span class="credit"><span class="en">Reproduced from</span><span class="es">Reproducido de</span> G. A. Clavijo-Mejía et al., <i>Results Surf. Interfaces</i> (2026) 100898, Fig. 7, <a href="https://doi.org/10.1016/j.rsurfi.2026.100898">doi:10.1016/j.rsurfi.2026.100898</a>.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-coating.jpg"><img src="assets/img/fig-coating.jpg" loading="lazy" alt="Grid of nine cross-section electron micrographs of glass coatings on titanium alloy."></a>
-        <figcaption>
-          <span class="en">A 120 mm spray distance gives the most compact coating cross-sections.</span>
-          <span class="es">Una distancia de proyección de 120 mm produce las secciones transversales más compactas.</span>
-          <span class="credit"><span class="en">Reproduced from</span><span class="es">Reproducido de</span> G. A. Clavijo-Mejía et al., <i>Results Surf. Interfaces</i> (2026) 100898, Fig. 8, <a href="https://doi.org/10.1016/j.rsurfi.2026.100898">doi:10.1016/j.rsurfi.2026.100898</a>.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-bismuth-map.jpg"><img src="assets/img/fig-bismuth-map.jpg" loading="lazy" alt="Grid of nine elemental maps with an even bismuth signal on each coating surface."></a>
-        <figcaption>
-          <span class="en">Bismuth stays evenly distributed across all nine coatings after plasma spraying.</span>
-          <span class="es">El bismuto permanece distribuido de forma homogénea en los nueve recubrimientos tras la proyección por plasma.</span>
-          <span class="credit"><span class="en">Reproduced from</span><span class="es">Reproducido de</span> G. A. Clavijo-Mejía et al., <i>Results Surf. Interfaces</i> (2026) 100898, Fig. 6, <a href="https://doi.org/10.1016/j.rsurfi.2026.100898">doi:10.1016/j.rsurfi.2026.100898</a>.</span>
-        </figcaption>
-      </figure>
-      <!-- TODO: confirmar permiso de Elsevier para las dos figuras siguientes (artículo no es de acceso abierto) -->
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-radiopacity-borate.jpg"><img src="assets/img/fig-radiopacity-borate.jpg" loading="lazy" alt="Radiograph of four glass pellets that grow brighter with bismuth content, next to a bar chart of their radiopacity."></a>
-        <figcaption>
-          <span class="en">Bi<sub>2</sub>O<sub>3</sub> raises the radiopacity of 13-93B3 borate glass from 0.22 to 3.06 mm Al.</span>
-          <span class="es">El Bi<sub>2</sub>O<sub>3</sub> eleva la radiopacidad del vidrio borato 13-93B3 de 0,22 a 3,06 mm Al.</span>
-          <span class="credit"><span class="en">Reproduced from</span><span class="es">Reproducido de</span> M. Abdolmaleki, G. A. Clavijo-Mejía et al., <i>Ceram. Int.</i> (2026), Fig. 7, <a href="https://doi.org/10.1016/j.ceramint.2026.09.003">doi:10.1016/j.ceramint.2026.09.003</a>. © 2026 Elsevier Ltd and Techna Group S.r.l.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-borate-sbf.jpg"><img src="assets/img/fig-borate-sbf.jpg" loading="lazy" alt="Electron micrographs of four glass powders before and after seven days in simulated body fluid."></a>
-        <figcaption>
-          <span class="en">All borate compositions form an apatite-like layer after 7 days in simulated body fluid.</span>
-          <span class="es">Todas las composiciones de borato forman una capa tipo apatita tras 7 días en fluido corporal simulado.</span>
-          <span class="credit"><span class="en">Reproduced from</span><span class="es">Reproducido de</span> M. Abdolmaleki, G. A. Clavijo-Mejía et al., <i>Ceram. Int.</i> (2026), Fig. 8, <a href="https://doi.org/10.1016/j.ceramint.2026.09.003">doi:10.1016/j.ceramint.2026.09.003</a>. © 2026 Elsevier Ltd and Techna Group S.r.l.</span>
-        </figcaption>
-      </figure>
-    </div>
-
-    <h3><span class="en">Latest results</span><span class="es">Resultados recientes</span></h3>
-    <div class="rb-figs">
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-aps-borate-topview.jpg"><img src="assets/img/fig-aps-borate-topview.jpg" loading="lazy" alt="Grid of nine electron micrographs of plasma-sprayed borate glass coatings."></a>
-        <figcaption>
-          <span class="en">The same plasma spray window also deposits the bismuth-containing 13-93B3 borate glass.</span>
-          <span class="es">La misma ventana de proyección por plasma deposita también el vidrio borato 13-93B3 con bismuto.</span>
-          <span class="credit">RADIOBIOCOATS, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-aps-radiographs.jpg"><img src="assets/img/fig-aps-radiographs.jpg" loading="lazy" alt="Radiographs of coated and uncoated titanium alloy plates next to an aluminium step wedge, with bar charts."></a>
-        <figcaption>
-          <span class="en">APS coatings raise the radiopacity of the titanium alloy from 4.9 to 6.6 mm Al with Bi-45S5 and from 5.9 to 8.2 mm Al with Bi-13-93B3.</span>
-          <span class="es">Los recubrimientos APS elevan la radiopacidad de la aleación de titanio de 4,9 a 6,6 mm Al con Bi-45S5 y de 5,9 a 8,2 mm Al con Bi-13-93B3.</span>
-          <span class="credit">RADIOBIOCOATS, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-      <!-- TODO: añadir el nombre del autor/a de la tesis en los créditos de las figuras de EPD -->
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-epd-sem.jpg"><img src="assets/img/fig-epd-sem.jpg" loading="lazy" alt="Electron micrographs of the surfaces and cross-sections of PEEK and PEEK/glass coatings."></a>
-        <figcaption>
-          <span class="en">Electrophoretic deposition at 110 V for 2 min builds continuous PEEK/Bi-13-93B3 layers 78–93 µm thick on titanium alloy.</span>
-          <span class="es">La deposición electroforética a 110 V durante 2 min forma capas continuas de PEEK/Bi-13-93B3 de 78–93 µm sobre aleación de titanio.</span>
-          <span class="credit">RADIOBIOCOATS, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-epd-surface.jpg"><img src="assets/img/fig-epd-surface.jpg" loading="lazy" alt="Six electron micrographs comparing titanium, PEEK and four PEEK/glass coating surfaces."></a>
-        <figcaption>
-          <span class="en">Bi<sub>2</sub>O<sub>3</sub> content changes the coating surface from porous in PK/Bi1 and PK/Bi2 to compact in PK/Bi3.</span>
-          <span class="es">El contenido de Bi<sub>2</sub>O<sub>3</sub> cambia la superficie del recubrimiento, de porosa en PK/Bi1 y PK/Bi2 a compacta en PK/Bi3.</span>
-          <span class="credit">RADIOBIOCOATS, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-sc-sem.jpg"><img src="assets/img/fig-sc-sem.jpg" loading="lazy" alt="Four electron micrographs of spray-coated glass layers at two magnifications."></a>
-        <figcaption>
-          <span class="en">Spray coating with a polycarbosilazane binder covers titanium alloy with particle-built Bi-45S5 (left) and Bi-13-93B3 (right) layers.</span>
-          <span class="es">El spray coating con aglutinante de policarbosilazano cubre la aleación de titanio con capas de partículas de Bi-45S5 (izquierda) y Bi-13-93B3 (derecha).</span>
-          <span class="credit">RADIOBIOCOATS, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-sc-radiographs.jpg"><img src="assets/img/fig-sc-radiographs.jpg" loading="lazy" alt="Radiographs of spray-coated and uncoated titanium alloy plates next to an aluminium step wedge, with bar charts."></a>
-        <figcaption>
-          <span class="en">Spray-coated Bi-45S5 and Bi-13-93B3 layers add about 2.0 and 1.7 mm Al to the radiopacity of the titanium alloy.</span>
-          <span class="es">Las capas de Bi-45S5 y Bi-13-93B3 depositadas por spray añaden unos 2,0 y 1,7 mm Al a la radiopacidad de la aleación de titanio.</span>
-          <span class="credit">RADIOBIOCOATS, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-agar-plates.jpg"><img src="assets/img/fig-agar-plates.jpg" loading="lazy" alt="Agar plates with four glass pellets and with three square samples."></a>
-        <figcaption>
-          <span class="en">Agar plates screen the glass pellets and the coated samples against Gram-negative bacteria.</span>
-          <span class="es">Las placas de agar evalúan las pastillas de vidrio y las muestras recubiertas frente a bacterias Gram negativas.</span>
-          <span class="credit">RADIOBIOCOATS, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-aps-cells.jpg"><img src="assets/img/fig-aps-cells.jpg" loading="lazy" alt="Surface roughness maps, electron micrographs after cell culture and bar charts of cell viability for APS coatings."></a>
-        <figcaption>
-          <span class="en">MG-63 osteoblast-like cells grow directly on the APS coatings with activity comparable to bare titanium alloy.</span>
-          <span class="es">Las células MG-63 de tipo osteoblasto crecen directamente sobre los recubrimientos APS con una actividad comparable a la de la aleación de titanio sin recubrir.</span>
-          <span class="credit">RADIOBIOCOATS, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/fig-epd-cells.jpg"><img src="assets/img/fig-epd-cells.jpg" loading="lazy" alt="Green fluorescence images of cells after 2 and 7 days and electron micrographs of cells on PEEK/glass coatings."></a>
-        <figcaption>
-          <span class="en">MG-63 metabolic activity on the EPD coatings rises from the bismuth-free glass toward the bismuth-richer compositions.</span>
-          <span class="es">La actividad metabólica de las MG-63 sobre los recubrimientos EPD aumenta desde el vidrio sin bismuto hacia las composiciones con más bismuto.</span>
-          <span class="credit">RADIOBIOCOATS, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-    </div>
-
-    <h3><span class="en">In the lab</span><span class="es">En el laboratorio</span></h3>
-    <div class="rb-figs">
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/lab-melting.jpg"><img src="assets/img/lab-melting.jpg" loading="lazy" alt="Electric furnace, raw powders, molten glass glowing orange and the crushed glass."></a>
-        <figcaption>
-          <span class="en">Bismuth-containing glasses are melted, quenched and crushed into coating feedstock.</span>
-          <span class="es">Los vidrios con bismuto se funden, se templan y se trituran para obtener el polvo de recubrimiento.</span>
-          <span class="credit"><span class="en">Photos:</span><span class="es">Fotos:</span> G. A. Clavijo-Mejía, FunGlass. © TnUAD.</span>
-        </figcaption>
-      </figure>
-      <!-- TODO: confirmar permiso del Uniklinikum Erlangen para esta foto -->
-      <figure class="rb-fig">
-        <a class="img" href="assets/img/lab-xray-stepwedge.jpg"><img src="assets/img/lab-xray-stepwedge.jpg" loading="lazy" alt="Glass pellets and an aluminium step wedge under the cone of a dental X-ray source."></a>
-        <figcaption>
-          <span class="en">An aluminium step wedge sits beside the samples to convert X-ray contrast into millimetres of aluminium.</span>
-          <span class="es">Una cuña escalonada de aluminio se coloca junto a las muestras para convertir el contraste de rayos X en milímetros de aluminio.</span>
-          <span class="credit"><span class="en">Photo:</span><span class="es">Foto:</span> G. A. Clavijo-Mejía, University Hospital Erlangen.</span>
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section id="publications">
-  <div class="wrap">
-    <h2><span class="en">Publications</span><span class="es">Publicaciones</span></h2>
-    <ol class="pubs">
-      <li>G. A. Clavijo-Mejía, M. Michálek, L. Youssef, H. Kaňková, D. Galusek, A. R. Boccaccini. Bioactivity of radiopaque 45S5 bioactive glass with progressive additions of Bi<sub>2</sub>O<sub>3</sub>: a dissolution study under static conditions. <i>Ceram. Int.</i> 50 (2024) 27216–27226. <a href="https://doi.org/10.1016/j.ceramint.2024.05.019">doi:10.1016/j.ceramint.2024.05.019</a></li>
-      <li>G. A. Clavijo-Mejía, M. Michálek, M. Arango-Ospina, I. Unalan, Q. Nawaz, D. Galusek, A. R. Boccaccini. Biocompatibility and antibacterial activity of radiopaque bismuth-containing bioactive glasses. <i>Ceram. Int.</i> 51 (2025) 42725–42733. <a href="https://doi.org/10.1016/j.ceramint.2025.07.016">doi:10.1016/j.ceramint.2025.07.016</a></li>
-      <li>G. A. Clavijo-Mejía, M. Michálek, F. Kurtuldu, L. Youssef, E. Bussy, A. Denoirjean, A. Magnaudeix, D. Cabrera-German, D. Galusek, A. R. Boccaccini. Influence of spray stand-off distance, plasma intensity, and Ar/H<sub>2</sub> ratio on the phase composition and microstructure of bismuth-containing 45S5 bioactive glass coatings deposited by atmospheric plasma spray (APS). <i>Results Surf. Interfaces</i> (2026) 100898. <a href="https://doi.org/10.1016/j.rsurfi.2026.100898">doi:10.1016/j.rsurfi.2026.100898</a></li>
-      <li>M. Abdolmaleki, G. A. Clavijo-Mejía, J. I. Zorzin, N. Alipanah, A. R. Boccaccini, M. Michálek. The effect of bismuth oxide addition on structure, radiopacity, and acellular bioactivity of 13-93B3 borate bioactive glass. <i>Ceram. Int.</i> (2026). <a href="https://doi.org/10.1016/j.ceramint.2026.09.003">doi:10.1016/j.ceramint.2026.09.003</a></li>
-      <li>G. A. Clavijo-Mejía, M. Michálek, Q. Nawaz, L. Youssef, F. Kurtuldu, D. Galusek, A. R. Boccaccini. Fabrication of radiopaque bioactive glass coatings with enhanced antibacterial activity by APS thermal spray. <i>Orthop. Proc.</i> 107-B (Supp 8) (2025) 84. <a href="https://doi.org/10.1302/1358-992X.2025.8.084">doi:10.1302/1358-992X.2025.8.084</a> <span class="en">(conference abstract)</span><span class="es">(resumen de congreso)</span></li>
-    </ol>
-    <h3><span class="en">Patent</span><span class="es">Patente</span></h3>
-    <p class="prose">
-      <span class="en">Radiopaque bioactive glass with added bismuth. Slovak patent SK 289404 B6. The patent belongs to Alexander Dubček University of Trenčín.</span>
-      <span class="es">Vidrio bioactivo radiopaco con adición de bismuto. Patente eslovaca SK 289404 B6. La patente pertenece a la Universidad Alexander Dubček de Trenčín.</span>
-    </p>
-    <h3><span class="en">Presentations</span><span class="es">Presentaciones</span></h3>
-    <ul class="talks">
-      <li><span class="when">ITSC 2026, Bangkok, Thailand, 18–20 March 2026</span>On the deposition of bismuth-containing silicate and borate glasses by APS thermal spray: a comparative study.</li>
-      <li><span class="when">3rd Biomaterials Day FunGlass–FAU Erlangen, 2 February 2026</span>Bismuth-containing bioactive glasses: silicate and borate networks for bioactive powders to be used in coatings deposition.</li>
-      <li><span class="when">31st Doctoral Seminar on Inorganic Non-Metallic Materials, UCT Prague, February 2026</span>Electrophoretic deposition of bismuth-doped 13-93B3 bioactive glass/PEEK coating on titanium implant for biomedical applications.</li>
-      <li><span class="when">FunGlass School 2/2025, 5–7 November 2025</span>Electrophoretic deposition of bismuth-doped 13-93B3 bioactive glass/PEEK coating on titanium implant for biomedical applications.</li>
-      <li><span class="when">33rd EORS Annual Meeting, Davos, Switzerland, 16–19 June 2025</span>Fabrication of radiopaque bioactive glass coatings with enhanced antibacterial activity by APS thermal spray.</li>
-      <li><span class="when">FunGlass School 1/2025, 23–25 June 2025</span>Structural and biological study of bismuth-doped boron-containing bioactive glasses for biomedical applications.</li>
-      <li><span class="when">Webinar FunGlass – Institute of Biomaterials, FAU Erlangen</span>Multi-technical fabrication of radiopaque bioactive glass coatings for biomedical applications.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="video">
-  <div class="wrap">
-    <h2><span class="en">Project video</span><span class="es">Vídeo del proyecto</span></h2>
-    <div class="video" id="videoBox">
-      <button type="button" id="videoBtn">
-        <span class="play" aria-hidden="true">▶</span>
-        <span class="en">Play video (loads from YouTube)</span><span class="es">Reproducir vídeo (se carga desde YouTube)</span>
-      </button>
-    </div>
-    <p class="note">
-      <span class="en">The video loads from YouTube in privacy-enhanced mode only after you click it.</span>
-      <span class="es">El vídeo se carga desde YouTube en modo de privacidad mejorada solo después de hacer clic.</span>
-      <a href="https://www.youtube.com/watch?v=KsIb7VJvtnM">YouTube</a>
-    </p>
-  </div>
-</section>
-
-<section id="news">
-  <div class="wrap">
-    <h2><span class="en">News</span><span class="es">Noticias</span></h2>
-    <!-- TODO: añadir aquí las publicaciones de LinkedIn como tarjetas con la misma estructura -->
-    <div class="news">
-      <article class="card">
-        <span class="when">September 2026</span>
-        <h3><span class="en">Borate glass paper published</span><span class="es">Publicado el artículo sobre el vidrio de borato</span></h3>
-        <p><span class="en"><i>Ceramics International</i> published the study on bismuth oxide in 13-93B3 borate bioactive glass.</span><span class="es"><i>Ceramics International</i> publicó el estudio sobre el óxido de bismuto en el vidrio bioactivo de borato 13-93B3.</span> <a href="https://doi.org/10.1016/j.ceramint.2026.09.003">DOI</a></p>
-      </article>
-      <article class="card">
-        <span class="when">August 2026</span>
-        <h3><span class="en">Plasma spray study published</span><span class="es">Publicado el estudio de proyección por plasma</span></h3>
-        <p><span class="en"><i>Results in Surfaces and Interfaces</i> published the first systematic study of APS parameters for bismuth-containing 45S5 coatings.</span><span class="es"><i>Results in Surfaces and Interfaces</i> publicó el primer estudio sistemático de parámetros APS para recubrimientos 45S5 con bismuto.</span> <a href="https://doi.org/10.1016/j.rsurfi.2026.100898">DOI</a></p>
-      </article>
-      <article class="card">
-        <span class="when">March 2026</span>
-        <h3><span class="en">Two talks at ITSC 2026</span><span class="es">Dos ponencias en ITSC 2026</span></h3>
-        <p><span class="en">Germán Clavijo-Mejía presented RADIOBIOCOATS at the International Thermal Spray Conference in Bangkok.</span><span class="es">Germán Clavijo-Mejía presentó RADIOBIOCOATS en la International Thermal Spray Conference de Bangkok.</span> <a href="https://www.funglass.eu/dr-german-clavijo-mejia-represents-funglass-at-the-international-thermal-spray-conference-2026/">FunGlass</a></p>
-      </article>
-      <article class="card">
-        <span class="when">June 2025</span>
-        <h3><span class="en">Talk and poster award at EORS 2025</span><span class="es">Ponencia y premio de póster en EORS 2025</span></h3>
-        <p><span class="en">The team presented radiopaque APS coatings in Davos, and Daniela Jaramillo won the best student poster award.</span><span class="es">El equipo presentó los recubrimientos APS radiopacos en Davos, y Daniela Jaramillo ganó el premio al mejor póster de estudiante.</span> <a href="https://www.funglass.eu/participation-at-the-33rd-annual-meeting-of-the-european-orthopaedic-research-society-eors-davos-switzerland/">FunGlass</a></p>
-      </article>
-      <article class="card">
-        <span class="when">2024</span>
-        <h3><span class="en">Project approved</span><span class="es">Proyecto aprobado</span></h3>
-        <p><span class="en">RADIOBIOCOATS received an R2–R4 excellent-researcher scholarship from the Recovery and Resilience Plan for Slovakia.</span><span class="es">RADIOBIOCOATS obtuvo una beca R2–R4 para investigadores excelentes del Plan de Recuperación y Resiliencia de Eslovaquia.</span> <a href="https://www.funglass.eu/success-of-funglass-approval-of-several-projects-from-the-slovak-recovary-plan/">FunGlass</a></p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="funding">
-  <div class="wrap">
-    <h2><span class="en">Funding and partners</span><span class="es">Financiación y socios</span></h2>
-    <h3><span class="en">Funded by</span><span class="es">Financiado por</span></h3>
-    <div class="logo-row">
-      <span class="logo eu"><img src="assets/img/eu-emblem.png" alt="Funded by the European Union – NextGenerationEU"></span>
-      <a class="logo" href="https://www.vaia.gov.sk/"><img src="assets/img/logos/vaia.png" alt="VAIA – Research and Innovation Authority of the Slovak Republic"></a>
-    </div>
-    <p class="note">
-      <span class="en">RADIOBIOCOATS is funded by the European Union – NextGenerationEU through the Recovery and Resilience Plan for Slovakia under project No. 09I03-03-V04-00479. FunGlass received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No. 739566.</span>
-      <span class="es">RADIOBIOCOATS está financiado por la Unión Europea – NextGenerationEU a través del Plan de Recuperación y Resiliencia de Eslovaquia, proyecto n.º 09I03-03-V04-00479. FunGlass recibió financiación del programa de investigación e innovación Horizonte 2020 de la Unión Europea, acuerdo de subvención n.º 739566.</span>
-    </p>
-    <h3><span class="en">Host institution</span><span class="es">Institución anfitriona</span></h3>
-    <div class="logo-row">
-      <a class="logo" href="https://tnuni.sk/"><img src="assets/img/logos/tnuni.png" alt="Alexander Dubček University of Trenčín"></a>
-      <a class="logo" href="https://www.funglass.eu/"><img src="assets/img/logos/funglass.png" alt="FunGlass – Centre for Functional and Surface Functionalized Glass"></a>
-    </div>
-    <h3><span class="en">Collaborators</span><span class="es">Colaboradores</span></h3>
-    <div class="logo-row">
-      <a class="logo" href="https://www.biomat.tf.fau.eu/"><img src="assets/img/logos/biomaterials-erlangen.png" alt="Institute of Biomaterials, FAU Erlangen-Nürnberg"></a>
-      <a class="logo" href="https://www.ircer.fr/"><img src="assets/img/logos/ircer.png" alt="IRCER – Institut de recherche sur les céramiques, Université de Limoges"></a>
-      <a class="logo" href="https://www.unison.mx/"><img src="4.%20Universidad%20de%20Sonora.png" alt="Universidad de Sonora"></a>
-    </div>
-    <h3><span class="en">Acknowledgements</span><span class="es">Agradecimientos</span></h3>
-    <!-- TODO: añadir aquí los nombres de las personas cuando cada una lo confirme -->
-    <p class="prose">
-      <span class="en">The project team thanks the Institute of Biomaterials at FAU Erlangen-Nürnberg, IRCER at the University of Limoges, the University of Sonora and University Hospital Erlangen for their collaboration.</span>
-      <span class="es">El equipo del proyecto agradece su colaboración al Instituto de Biomateriales de la FAU Erlangen-Núremberg, al IRCER de la Universidad de Limoges, a la Universidad de Sonora y al Hospital Universitario de Erlangen.</span>
-    </p>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <h2><span class="en">Contact</span><span class="es">Contacto</span></h2>
-    <p>
-      <strong>Dr. Germán A. Clavijo-Mejía</strong><br>
-      <span class="en">FunGlass – Centre for Functional and Surface Functionalized Glass<br>Alexander Dubček University of Trenčín<br>Študentská 2, 911 50 Trenčín, Slovakia</span>
-      <span class="es">FunGlass – Centro de Vidrio Funcional y Funcionalizado en Superficie<br>Universidad Alexander Dubček de Trenčín<br>Študentská 2, 911 50 Trenčín, Eslovaquia</span><br>
-      <a href="mailto:german.clavijo@tnuni.sk">german.clavijo@tnuni.sk</a>
-    </p>
-  </div>
-</section>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><img src="assets/img/logo.png" alt="RADIOBIOCOATS – to safely see beyond"></a>
+<nav aria-label="Main"><a href="index.html" aria-current="page"><span class="en">Home</span><span class="es">Inicio</span></a><a href="aps.html"><span class="en">APS</span><span class="es">APS</span></a><a href="sc.html"><span class="en">Spray coating</span><span class="es">Spray coating</span></a><a href="epd.html"><span class="en">EPD</span><span class="es">EPD</span></a><a href="radiopacity.html"><span class="en">Radiopacity</span><span class="es">Radiopacidad</span></a><a href="invitro.html"><span class="en">In vitro</span><span class="es">In vitro</span></a><a href="index.html#publications"><span class="en">Publications</span><span class="es">Publicaciones</span></a><a href="index.html#contact"><span class="en">Contact</span><span class="es">Contacto</span></a></nav>
+<button id="langBtn" type="button" aria-label="Switch language / Cambiar idioma">ES</button>
+</div></header>
+<main>
+<div class="band"><div class="wrap">
+<h1><span class="en">Radiopaque bioactive glass coatings for implants</span><span class="es">Recubrimientos de vidrio bioactivo radiopaco para implantes</span></h1>
+<p class="lead"><span class="en">RADIOBIOCOATS develops bioactive glass coatings that bond to bone and stay visible on X-ray images.</span><span class="es">RADIOBIOCOATS desarrolla recubrimientos de vidrio bioactivo que se unen al hueso y siguen siendo visibles en las radiografías.</span></p>
+<p class="meta"><span class="en">FunGlass, Alexander Dubček University of Trenčín, Slovakia. June 2024 – May 2026.</span><span class="es">FunGlass, Universidad Alexander Dubček de Trenčín, Eslovaquia. Junio 2024 – mayo 2026.</span></p>
+</div></div>
+<div class="hero-img"><div class="wrap"><img src="assets/img/hero.jpg" width="1280" height="570" alt="Collage of RADIOBIOCOATS work: glass melting, powders, plasma spraying with a robot, radiographs of glass pellets, coated samples, electron micrographs and cell-culture plates.">
+<span class="credit"><span class="en">Photos: G. A. Clavijo-Mejía, FunGlass, Alexander Dubček University of Trenčín.</span><span class="es">Fotos: G. A. Clavijo-Mejía, FunGlass, Universidad Alexander Dubček de Trenčín.</span></span></div></div>
+<section class="tint" id="why"><div class="wrap"><h2><span class="en">Why it matters</span><span class="es">Por qué importa</span></h2><div class="prose"><p><span class="en">Bioactive glass bonds to bone and helps it regenerate. Standard bioactive glass looks almost like bone on a radiograph, so doctors cannot easily see where a coating sits or how it changes over time.</span><span class="es">El vidrio bioactivo se une al hueso y ayuda a regenerarlo. El vidrio bioactivo convencional se ve casi igual que el hueso en una radiografía, así que es difícil saber dónde está un recubrimiento o cómo cambia con el tiempo.</span></p><p><span class="en">Bismuth oxide absorbs X-rays strongly. RADIOBIOCOATS adds it to two bioactive glasses, the silicate 45S5 and the borate 13-93B3, and deposits them on titanium alloy by three industrial coating routes.</span><span class="es">El óxido de bismuto absorbe con fuerza los rayos X. RADIOBIOCOATS lo incorpora a dos vidrios bioactivos, el silicato 45S5 y el borato 13-93B3, y los deposita sobre aleación de titanio mediante tres vías de recubrimiento industriales.</span></p></div></div></section>
+<section class="" id="explore"><div class="wrap"><h2><span class="en">Explore the project</span><span class="es">Explora el proyecto</span></h2><p class="prose"><span class="en">Each coating technique has its own page with a video or main image and its key results.</span><span class="es">Cada técnica de recubrimiento tiene su propia página con un vídeo o una imagen principal y sus resultados clave.</span></p><div class="tiles"><a class="tile" href="aps.html"><div class="pic"><img src="assets/img/aps-plasma.jpg" alt="" loading="lazy"><span class="tag">APS</span></div>
+<div class="txt"><h3><span class="en">Atmospheric plasma spraying</span><span class="es">Proyección por plasma atmosférico</span></h3><p><span class="en">A plasma jet melts the glass and builds dense, radiopaque coatings on titanium alloy.</span><span class="es">Un chorro de plasma funde el vidrio y forma recubrimientos densos y radiopacos sobre aleación de titanio.</span></p><span class="go"><span class="en">Open page →</span><span class="es">Abrir página →</span></span></div></a><a class="tile" href="sc.html"><div class="pic"><img src="assets/img/sc-plates.jpg" alt="" loading="lazy"><span class="tag">SC</span></div>
+<div class="txt"><h3><span class="en">Spray coating</span><span class="es">Spray coating</span></h3><p><span class="en">A preceramic polymer binder carries the glass onto the metal at low temperature.</span><span class="es">Un aglutinante polimérico precerámico lleva el vidrio al metal a baja temperatura.</span></p><span class="go"><span class="en">Open page →</span><span class="es">Abrir página →</span></span></div></a><a class="tile" href="epd.html"><div class="pic"><img src="assets/img/epd-scheme.jpg" alt="" loading="lazy"><span class="tag">EPD</span></div>
+<div class="txt"><h3><span class="en">Electrophoretic deposition</span><span class="es">Deposición electroforética</span></h3><p><span class="en">An electric field builds PEEK/borate glass composite coatings at room temperature.</span><span class="es">Un campo eléctrico forma recubrimientos compuestos de PEEK y vidrio de borato a temperatura ambiente.</span></p><span class="go"><span class="en">Open page →</span><span class="es">Abrir página →</span></span></div></a><a class="tile" href="radiopacity.html"><div class="pic"><img src="assets/img/lab-xray-stepwedge.jpg" alt="" loading="lazy"><span class="tag">X-ray</span></div>
+<div class="txt"><h3><span class="en">Radiopacity</span><span class="es">Radiopacidad</span></h3><p><span class="en">All radiographs of the glass pellets and of the APS, spray and EPD coatings.</span><span class="es">Todas las radiografías de las pastillas de vidrio y de los recubrimientos APS, spray y EPD.</span></p><span class="go"><span class="en">Open page →</span><span class="es">Abrir página →</span></span></div></a><a class="tile" href="invitro.html"><div class="pic"><img src="assets/img/powder-agar-1.jpg" alt="" loading="lazy"><span class="tag">In vitro</span></div>
+<div class="txt"><h3><span class="en">In vitro tests of powders and coatings</span><span class="es">Ensayos in vitro de polvos y recubrimientos</span></h3><p><span class="en">Cell and antibacterial tests of silicate and borate glasses, as powders and as coatings.</span><span class="es">Ensayos celulares y antibacterianos de vidrios de silicato y de borato, como polvo y como recubrimiento.</span></p><span class="go"><span class="en">Open page →</span><span class="es">Abrir página →</span></span></div></a></div></div></section>
+<section class="tint2" id="results"><div class="wrap"><h2><span class="en">Key results</span><span class="es">Resultados clave</span></h2><div class="stats"><div class="stat"><b>3.5×</b><span class="en">Bi<sub>2</sub>O<sub>3</sub> raised the radiopacity of 45S5 silicate glass 3.5 times with 12 wt%.</span><span class="es">El Bi<sub>2</sub>O<sub>3</sub> aumentó 3,5 veces la radiopacidad del vidrio de silicato 45S5 con un 12 % en peso.</span></div><div class="stat"><b>~14×</b><span class="en">Bi<sub>2</sub>O<sub>3</sub> raised the radiopacity of 13-93B3 borate glass about 14 times with 20 wt%.</span><span class="es">El Bi<sub>2</sub>O<sub>3</sub> aumentó unas 14 veces la radiopacidad del vidrio de borato 13-93B3 con un 20 % en peso.</span></div><div class="stat"><b>+2.3 mm Al</b><span class="en">Plasma-sprayed borate coatings added up to 2.3 mm Al to the radiopacity of titanium alloy.</span><span class="es">Los recubrimientos de borato proyectados por plasma añadieron hasta 2,3 mm Al a la radiopacidad de la aleación de titanio.</span></div><div class="stat"><b>3</b><span class="en">Coating routes were established: plasma spray, spray coating and electrophoretic deposition.</span><span class="es">Se establecieron tres vías de recubrimiento: proyección por plasma, spray coating y deposición electroforética.</span></div><div class="stat"><b>4 + 1 + 1</b><span class="en">The project produced four peer-reviewed papers, a granted patent and a PhD thesis.</span><span class="es">El proyecto produjo cuatro artículos revisados por pares, una patente concedida y una tesis doctoral.</span></div></div></div></section>
+<section class="" id="publications"><div class="wrap"><h2><span class="en">Publications</span><span class="es">Publicaciones</span></h2><ol class="pubs">
+<li>G. A. Clavijo-Mejía, M. Michálek, L. Youssef, H. Kaňková, D. Galusek, A. R. Boccaccini. Bioactivity of radiopaque 45S5 bioactive glass with progressive additions of Bi<sub>2</sub>O<sub>3</sub>: a dissolution study under static conditions. <i>Ceram. Int.</i> 50 (2024) 27216–27226. <a href="https://doi.org/10.1016/j.ceramint.2024.05.019">doi:10.1016/j.ceramint.2024.05.019</a></li>
+<li>G. A. Clavijo-Mejía, M. Michálek, M. Arango-Ospina, I. Unalan, Q. Nawaz, D. Galusek, A. R. Boccaccini. Biocompatibility and antibacterial activity of radiopaque bismuth-containing bioactive glasses. <i>Ceram. Int.</i> 51 (2025) 42725–42733. <a href="https://doi.org/10.1016/j.ceramint.2025.07.016">doi:10.1016/j.ceramint.2025.07.016</a></li>
+<li>G. A. Clavijo-Mejía, M. Michálek, F. Kurtuldu, L. Youssef, E. Bussy, A. Denoirjean, A. Magnaudeix, D. Cabrera-German, D. Galusek, A. R. Boccaccini. Influence of spray stand-off distance, plasma intensity, and Ar/H<sub>2</sub> ratio on the phase composition and microstructure of bismuth-containing 45S5 bioactive glass coatings deposited by atmospheric plasma spray (APS). <i>Results Surf. Interfaces</i> (2026) 100898. <a href="https://doi.org/10.1016/j.rsurfi.2026.100898">doi:10.1016/j.rsurfi.2026.100898</a></li>
+<li>M. Abdolmaleki, G. A. Clavijo-Mejía, J. I. Zorzin, N. Alipanah, A. R. Boccaccini, M. Michálek. The effect of bismuth oxide addition on structure, radiopacity, and acellular bioactivity of 13-93B3 borate bioactive glass. <i>Ceram. Int.</i> (2026). <a href="https://doi.org/10.1016/j.ceramint.2026.09.003">doi:10.1016/j.ceramint.2026.09.003</a></li>
+<li>G. A. Clavijo-Mejía, M. Michálek, Q. Nawaz, L. Youssef, F. Kurtuldu, D. Galusek, A. R. Boccaccini. Fabrication of radiopaque bioactive glass coatings with enhanced antibacterial activity by APS thermal spray. <i>Orthop. Proc.</i> 107-B (Supp 8) (2025) 84. <a href="https://doi.org/10.1302/1358-992X.2025.8.084">doi:10.1302/1358-992X.2025.8.084</a> <span class="en">(conference abstract)</span><span class="es">(resumen de congreso)</span></li>
+</ol><h3><span class="en">Patent</span><span class="es">Patente</span></h3><p class="prose"><span class="en">Radiopaque bioactive glass with added bismuth. Slovak patent SK 289404 B6. The patent belongs to Alexander Dubček University of Trenčín.</span><span class="es">Vidrio bioactivo radiopaco con adición de bismuto. Patente eslovaca SK 289404 B6. La patente pertenece a la Universidad Alexander Dubček de Trenčín.</span></p><h3><span class="en">Presentations</span><span class="es">Presentaciones</span></h3><ul class="talks"><li><span class="when">ITSC 2026, Bangkok, Thailand, 18–20 March 2026</span>On the deposition of bismuth-containing silicate and borate glasses by APS thermal spray: a comparative study.</li><li><span class="when">3rd Biomaterials Day FunGlass–FAU Erlangen, 2 February 2026</span>Bismuth-containing bioactive glasses: silicate and borate networks for bioactive powders to be used in coatings deposition.</li><li><span class="when">31st Doctoral Seminar on Inorganic Non-Metallic Materials, UCT Prague, February 2026</span>Electrophoretic deposition of bismuth-doped 13-93B3 bioactive glass/PEEK coating on titanium implant for biomedical applications.</li><li><span class="when">FunGlass School 2/2025, 5–7 November 2025</span>Electrophoretic deposition of bismuth-doped 13-93B3 bioactive glass/PEEK coating on titanium implant for biomedical applications.</li><li><span class="when">33rd EORS Annual Meeting, Davos, Switzerland, 16–19 June 2025</span>Fabrication of radiopaque bioactive glass coatings with enhanced antibacterial activity by APS thermal spray.</li><li><span class="when">FunGlass School 1/2025, 23–25 June 2025</span>Structural and biological study of bismuth-doped boron-containing bioactive glasses for biomedical applications.</li><li><span class="when">Webinar FunGlass – Institute of Biomaterials, FAU Erlangen, August 2026</span>Multi-technical fabrication of radiopaque bioactive glass coatings for biomedical applications.</li></ul></div></section>
+<section class="tint" id="video"><div class="wrap"><h2><span class="en">Project video</span><span class="es">Vídeo del proyecto</span></h2><div class="yt" id="ytBox"><button type="button" id="ytBtn"><span class="play" aria-hidden="true">▶</span><span class="en">Play video (loads from YouTube)</span><span class="es">Reproducir vídeo (se carga desde YouTube)</span></button></div><p class="note"><span class="en">The video loads from YouTube in privacy-enhanced mode only after you click it.</span><span class="es">El vídeo se carga desde YouTube en modo de privacidad mejorada solo después de hacer clic.</span> <a href="https://www.youtube.com/watch?v=KsIb7VJvtnM">YouTube</a></p></div></section>
+<section class="" id="news"><div class="wrap"><h2><span class="en">News</span><span class="es">Noticias</span></h2><!-- TODO: añadir aquí las publicaciones de LinkedIn como tarjetas con la misma estructura -->
+<div class="news"><article class="card"><span class="when">September 2026</span><h3><span class="en">Borate glass paper published</span><span class="es">Publicado el artículo sobre el vidrio de borato</span></h3><p><span class="en"><i>Ceramics International</i> published the study on bismuth oxide in 13-93B3 borate bioactive glass.</span><span class="es"><i>Ceramics International</i> publicó el estudio sobre el óxido de bismuto en el vidrio bioactivo de borato 13-93B3.</span> <a href="https://doi.org/10.1016/j.ceramint.2026.09.003">DOI</a></p></article><article class="card"><span class="when">August 2026</span><h3><span class="en">Plasma spray study published</span><span class="es">Publicado el estudio de proyección por plasma</span></h3><p><span class="en"><i>Results in Surfaces and Interfaces</i> published the first systematic study of APS parameters for bismuth-containing 45S5 coatings.</span><span class="es"><i>Results in Surfaces and Interfaces</i> publicó el primer estudio sistemático de parámetros APS para recubrimientos 45S5 con bismuto.</span> <a href="https://doi.org/10.1016/j.rsurfi.2026.100898">DOI</a></p></article><article class="card"><span class="when">March 2026</span><h3><span class="en">Two talks at ITSC 2026</span><span class="es">Dos ponencias en ITSC 2026</span></h3><p><span class="en">Germán Clavijo-Mejía presented RADIOBIOCOATS at the International Thermal Spray Conference in Bangkok.</span><span class="es">Germán Clavijo-Mejía presentó RADIOBIOCOATS en la International Thermal Spray Conference de Bangkok.</span> <a href="https://www.funglass.eu/dr-german-clavijo-mejia-represents-funglass-at-the-international-thermal-spray-conference-2026/">FunGlass</a></p></article><article class="card"><span class="when">June 2025</span><h3><span class="en">Talk and poster award at EORS 2025</span><span class="es">Ponencia y premio de póster en EORS 2025</span></h3><p><span class="en">The team presented radiopaque APS coatings in Davos, and Daniela Jaramillo won the best student poster award.</span><span class="es">El equipo presentó los recubrimientos APS radiopacos en Davos, y Daniela Jaramillo ganó el premio al mejor póster de estudiante.</span> <a href="https://www.funglass.eu/participation-at-the-33rd-annual-meeting-of-the-european-orthopaedic-research-society-eors-davos-switzerland/">FunGlass</a></p></article><article class="card"><span class="when">2024</span><h3><span class="en">Project approved</span><span class="es">Proyecto aprobado</span></h3><p><span class="en">RADIOBIOCOATS received an R2–R4 excellent-researcher scholarship from the Recovery and Resilience Plan for Slovakia.</span><span class="es">RADIOBIOCOATS obtuvo una beca R2–R4 para investigadores excelentes del Plan de Recuperación y Resiliencia de Eslovaquia.</span> <a href="https://www.funglass.eu/success-of-funglass-approval-of-several-projects-from-the-slovak-recovary-plan/">FunGlass</a></p></article></div></div></section>
+<section class="tint2" id="funding"><div class="wrap"><h2><span class="en">Funding and partners</span><span class="es">Financiación y socios</span></h2><h3><span class="en">Funded by</span><span class="es">Financiado por</span></h3>
+<div class="logo-row"><span class="logo eu"><img src="assets/img/eu-emblem.png" alt="Funded by the European Union – NextGenerationEU"></span>
+<a class="logo" href="https://www.vaia.gov.sk/"><img src="assets/img/logos/vaia.png" alt="VAIA – Research and Innovation Authority of the Slovak Republic"></a></div>
+<p class="note"><span class="en">RADIOBIOCOATS is funded by the European Union – NextGenerationEU through the Recovery and Resilience Plan for Slovakia under project No. 09I03-03-V04-00479. FunGlass received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No. 739566.</span><span class="es">RADIOBIOCOATS está financiado por la Unión Europea – NextGenerationEU a través del Plan de Recuperación y Resiliencia de Eslovaquia, proyecto n.º 09I03-03-V04-00479. FunGlass recibió financiación del programa de investigación e innovación Horizonte 2020 de la Unión Europea, acuerdo de subvención n.º 739566.</span></p>
+<h3><span class="en">Host institution</span><span class="es">Institución anfitriona</span></h3>
+<div class="logo-row"><a class="logo" href="https://tnuni.sk/"><img src="assets/img/logos/tnuni.png" alt="Alexander Dubček University of Trenčín"></a>
+<a class="logo" href="https://www.funglass.eu/"><img src="assets/img/logos/funglass.png" alt="FunGlass – Centre for Functional and Surface Functionalized Glass"></a></div>
+<h3><span class="en">Collaborators</span><span class="es">Colaboradores</span></h3>
+<div class="logo-row"><a class="logo" href="https://www.biomat.tf.fau.eu/"><img src="assets/img/logos/biomaterials-erlangen.png" alt="Institute of Biomaterials, FAU Erlangen-Nürnberg"></a>
+<a class="logo" href="https://www.ircer.fr/"><img src="assets/img/logos/ircer.png" alt="IRCER – Institut de recherche sur les céramiques, Université de Limoges"></a>
+<a class="logo" href="https://www.unison.mx/"><img src="4.%20Universidad%20de%20Sonora.png" alt="Universidad de Sonora"></a></div>
+<h3><span class="en">Acknowledgements</span><span class="es">Agradecimientos</span></h3>
+<!-- TODO: añadir aquí los nombres de las personas cuando cada una lo confirme -->
+<p class="prose"><span class="en">The project team thanks the Institute of Biomaterials at FAU Erlangen-Nürnberg, IRCER at the University of Limoges, the University of Sonora and University Hospital Erlangen for their collaboration.</span><span class="es">El equipo del proyecto agradece su colaboración al Instituto de Biomateriales de la FAU Erlangen-Núremberg, al IRCER de la Universidad de Limoges, a la Universidad de Sonora y al Hospital Universitario de Erlangen.</span></p></div></section>
+<section class="" id="contact"><div class="wrap"><h2><span class="en">Contact</span><span class="es">Contacto</span></h2><p><strong>Dr. Germán A. Clavijo-Mejía</strong><br><span class="en">FunGlass – Centre for Functional and Surface Functionalized Glass<br>Alexander Dubček University of Trenčín<br>Študentská 2, 911 50 Trenčín, Slovakia</span><span class="es">FunGlass – Centro de Vidrio Funcional y Funcionalizado en Superficie<br>Universidad Alexander Dubček de Trenčín<br>Študentská 2, 911 50 Trenčín, Eslovaquia</span><br><a href="mailto:german.clavijo@tnuni.sk">german.clavijo@tnuni.sk</a></p></div></section>
 
 </main>
-
-<footer>
-  <div class="wrap">
-    <p>
-      <span class="en">This website uses no cookies and no trackers.</span>
-      <span class="es">Este sitio web no usa cookies ni rastreadores.</span>
-    </p>
-    <p>© 2026 RADIOBIOCOATS, Alexander Dubček University of Trenčín.</p>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var html=document.documentElement, btn=document.getElementById('langBtn');
-  function setLang(l){html.lang=l; btn.textContent=(l==='en')?'ES':'EN';}
-  setLang((navigator.language||'en').toLowerCase().indexOf('es')===0?'es':'en');
-  btn.addEventListener('click',function(){setLang(html.lang==='en'?'es':'en');});
-  document.getElementById('videoBtn').addEventListener('click',function(){
-    var f=document.createElement('iframe');
-    f.src='https://www.youtube-nocookie.com/embed/KsIb7VJvtnM?autoplay=1';
-    f.title='RADIOBIOCOATS project video';
-    f.allow='autoplay; encrypted-media; picture-in-picture';
-    f.allowFullscreen=true;
-    var box=document.getElementById('videoBox'); box.innerHTML=''; box.appendChild(f);
-  });
-})();
-</script>
+<footer><div class="wrap">
+<p><span class="en">RADIOBIOCOATS is funded by the European Union – NextGenerationEU through the Recovery and Resilience Plan for Slovakia under project No. 09I03-03-V04-00479.</span><span class="es">RADIOBIOCOATS está financiado por la Unión Europea – NextGenerationEU a través del Plan de Recuperación y Resiliencia de Eslovaquia, proyecto n.º 09I03-03-V04-00479.</span></p>
+<p><span class="en">This website uses no cookies and no trackers.</span><span class="es">Este sitio web no usa cookies ni rastreadores.</span></p>
+<p>© 2026 RADIOBIOCOATS, <span class="en">Alexander Dubček University of Trenčín.</span><span class="es">Universidad Alexander Dubček de Trenčín.</span></p>
+</div></footer>
+<script src="site.js"></script>
 </body>
 </html>

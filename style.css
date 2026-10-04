@@ -113,3 +113,4 @@ tbody tr:nth-child(even) td{background:var(--p04)}
 footer{background:var(--ink);color:#fff;padding:2rem 0;font-size:.9rem}
 footer a{color:#fff}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tile{transition:none}}
+.stat b.hl{font-size:1.15rem;line-height:1.25;margin-bottom:.35rem}

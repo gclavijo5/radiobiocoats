@@ -143,3 +143,4 @@ h3.sub{margin:1.6rem 0 .2rem;color:var(--ink)}
 .figs.quad{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .partner li strong a{color:inherit;text-decoration:underline;text-decoration-color:var(--p35);text-underline-offset:3px}
 .partner li strong a:hover{color:var(--p);text-decoration-color:var(--p)}
+.card img.thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin:0 0 .7rem;border:1px solid var(--p12)}

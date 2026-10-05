@@ -7,7 +7,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-html[lang="en"] .es, html[lang="es"] .en{display:none}
+html:not([lang="en"]) .en,html:not([lang="de"]) .de,html:not([lang="sk"]) .sk,html:not([lang="fr"]) .fr,html:not([lang="es"]) .es{display:none}
 a{color:var(--p)}
 a:focus-visible,button:focus-visible,video:focus-visible{outline:3px solid var(--p);outline-offset:2px}
 img{max-width:100%;height:auto}
@@ -21,8 +21,17 @@ nav{display:flex;flex-wrap:wrap;gap:.15rem .35rem;flex:1;font-size:.9rem}
 nav a{text-decoration:none;color:var(--ink);padding:.25rem .55rem;border-radius:999px}
 nav a:hover{background:var(--p08)}
 nav a[aria-current="page"]{background:var(--p12);font-weight:600}
-#langBtn{border:1px solid var(--p);background:var(--p);color:#fff;border-radius:999px;padding:.3rem .95rem;font-weight:600;cursor:pointer}
+.langsel{position:relative}
+#langBtn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--p);background:var(--p);color:#fff;border-radius:999px;padding:.3rem .8rem;font-weight:600;cursor:pointer}
 #langBtn:hover{background:var(--ink)}
+.langsel img{display:block;width:20px;height:14px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.18);object-fit:cover}
+.langsel .caret{font-size:.75rem;opacity:.85}
+.langmenu{position:absolute;right:0;top:calc(100% + .4rem);list-style:none;margin:0;padding:.35rem;background:#fff;border:1px solid var(--p20);border-radius:12px;box-shadow:0 10px 30px rgba(40,38,70,.18);min-width:11rem;z-index:30}
+.langmenu button{display:flex;align-items:center;gap:.55rem;width:100%;border:0;background:none;padding:.45rem .6rem;border-radius:8px;cursor:pointer;font:inherit;font-size:.92rem;color:var(--text);text-align:left}
+.langmenu button:hover,.langmenu button:focus-visible{background:var(--p08)}
+.langmenu button[aria-checked="true"]{background:var(--p12);font-weight:600}
+.langmenu .code{font-weight:600;width:1.8rem;color:var(--ink)}
+.langmenu .lname{color:var(--mid)}
 
 /* Hero band */
 .band{background:linear-gradient(135deg,rgba(82,79,123,.97) 0%,rgba(89,86,128,.90) 55%,rgba(117,114,149,.80) 100%);color:#fff;padding:2.6rem 0 2.2rem}
@@ -116,7 +125,7 @@ footer a{color:#fff}
 .stat b.hl{font-size:1.15rem;line-height:1.25;margin-bottom:.35rem}
 /* Justified text */
 p,figcaption,.stat,.pubs li,.talks li,.tile p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
-html[lang="en"] body{hyphens:auto}
+body{hyphens:auto}
 .band h1,.band p.lead,.band .meta{text-align:left}
 
 /* Contact card with portrait */

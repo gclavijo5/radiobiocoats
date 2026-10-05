@@ -118,3 +118,26 @@ footer a{color:#fff}
 p,figcaption,.stat,.pubs li,.talks li,.tile p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 html[lang="en"] body{hyphens:auto}
 .band h1,.band p.lead,.band .meta{text-align:left}
+
+/* Contact card with portrait */
+.contact-card{display:grid;grid-template-columns:220px 1fr;gap:1.8rem;align-items:start;margin-top:1rem}
+.contact-photo{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;border:1px solid var(--p20)}
+.contact-info p{text-align:left;margin:0 0 1rem}
+.contact-info p.bio{text-align:justify;max-width:68ch}
+.ids{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.ids a{display:inline-block;padding:.35rem .85rem;border:1px solid var(--p20);border-radius:999px;text-decoration:none;font-size:.9rem;background:var(--p04)}
+.ids a:hover{background:var(--p12)}
+@media (max-width:520px){.contact-card{grid-template-columns:1fr}.contact-photo{max-width:220px}}
+
+/* Collaborators */
+.partners{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));margin:1.4rem 0 2rem}
+.partner{background:#fff;border:1px solid var(--p20);border-radius:12px;padding:1.1rem 1.2rem}
+.partner .plogo{display:flex;align-items:center;height:56px;margin-bottom:.6rem}
+.partner .plogo img{max-height:52px;max-width:180px;width:auto}
+.partner h3{font-size:1.02rem;margin:0 0 .15rem;color:var(--ink)}
+.partner .place{font-size:.85rem;color:var(--mid);margin:0 0 .7rem;text-align:left}
+.partner ul{list-style:none;padding:0;margin:0}
+.partner li{padding:.35rem 0;border-top:1px solid var(--p12);font-size:.93rem;line-height:1.35}
+.partner li span{font-size:.85rem;color:var(--mid)}
+h3.sub{margin:1.6rem 0 .2rem;color:var(--ink)}
+.figs.quad{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}

@@ -141,3 +141,5 @@ html[lang="en"] body{hyphens:auto}
 .partner li span{font-size:.85rem;color:var(--mid)}
 h3.sub{margin:1.6rem 0 .2rem;color:var(--ink)}
 .figs.quad{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.partner li strong a{color:inherit;text-decoration:underline;text-decoration-color:var(--p35);text-underline-offset:3px}
+.partner li strong a:hover{color:var(--p);text-decoration-color:var(--p)}

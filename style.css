@@ -144,8 +144,17 @@ h3.sub{margin:1.6rem 0 .2rem;color:var(--ink)}
 .partner li strong a{color:inherit;text-decoration:underline;text-decoration-color:var(--p35);text-underline-offset:3px}
 .partner li strong a:hover{color:var(--p);text-decoration-color:var(--p)}
 .card img.thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin:0 0 .7rem;border:1px solid var(--p12)}
-.talks li.has-thumb{display:grid;grid-template-columns:1fr 76px;gap:1rem;align-items:center}
+.talks li.has-thumb{display:grid;grid-template-columns:1fr 152px;gap:1.2rem;align-items:center}
 .talks li.has-thumb .tthumb{order:2}
-.talks .tthumb img{display:block;width:76px;aspect-ratio:4/3;object-fit:cover;border-radius:6px;border:1px solid var(--p20);opacity:.92;transition:opacity .15s,border-color .15s}
+.talks .tthumb img{display:block;width:152px;aspect-ratio:4/3;object-fit:cover;border-radius:6px;border:1px solid var(--p20);opacity:.92;transition:opacity .15s,border-color .15s}
 .talks .tthumb:hover img{opacity:1;border-color:var(--p)}
-@media (max-width:520px){.talks li.has-thumb{grid-template-columns:1fr 60px;gap:.7rem}.talks .tthumb img{width:60px}}
+@media (max-width:520px){.talks li.has-thumb{grid-template-columns:1fr 104px;gap:.8rem}.talks .tthumb img{width:104px}}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.8rem;padding:4.5rem 1rem 1.5rem;background:rgba(30,28,52,.78);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .2s}
+.lb.open{opacity:1}
+.lb img{max-width:min(1100px,94vw);max-height:78vh;width:auto;height:auto;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.45);background:#fff;cursor:zoom-out}
+.lb p{margin:0;max-width:min(900px,92vw);color:#fff;font-size:.95rem;text-align:center;line-height:1.45}
+.lb button{position:fixed;top:max(1rem,env(safe-area-inset-top));right:1rem;border:0;border-radius:999px;background:#fff;color:var(--ink);font-weight:600;font-size:.95rem;padding:.5rem 1rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.lb button:hover{background:var(--p);color:#fff}
+body.lb-on{overflow:hidden}

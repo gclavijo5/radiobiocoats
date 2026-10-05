@@ -114,3 +114,7 @@ footer{background:var(--ink);color:#fff;padding:2rem 0;font-size:.9rem}
 footer a{color:#fff}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tile{transition:none}}
 .stat b.hl{font-size:1.15rem;line-height:1.25;margin-bottom:.35rem}
+/* Justified text */
+p,figcaption,.stat,.pubs li,.talks li,.tile p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+html[lang="en"] body{hyphens:auto}
+.band h1,.band p.lead,.band .meta{text-align:left}

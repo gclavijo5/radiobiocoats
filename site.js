@@ -44,6 +44,7 @@
     var lg=html.lang||'en', img=a.querySelector('img'), cap='';
     var fig=a.closest('figure');
     if(fig){ var s=fig.querySelector('figcaption > .'+lg)||fig.querySelector('figcaption .'+lg); cap=s?s.textContent:(img?img.alt:''); }
+    else if(a.closest('article.card')){ var h=a.closest('article.card').querySelector('h3 .'+lg); cap=h?h.textContent:(img?img.alt:''); }
     else { var li=a.closest('li'); var w=li&&li.querySelector('.when'); cap=w?w.textContent:(img?img.alt:''); }
     lb=document.createElement('div'); lb.className='lb'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true');
     var b=document.createElement('button'); b.type='button'; b.textContent='✕ '+({en:'Close',de:'Schließen',sk:'Zavrieť',fr:'Fermer',es:'Cerrar'}[lg]||'Close');

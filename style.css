@@ -17,8 +17,8 @@ img{max-width:100%;height:auto}
 header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--p20)}
 header.top .wrap{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:.55rem;padding-bottom:.55rem}
 header.top .brand img{height:42px;width:auto;display:block}
-nav{display:flex;flex-wrap:wrap;gap:.15rem .35rem;flex:1;font-size:.9rem}
-nav a{text-decoration:none;color:var(--ink);padding:.25rem .55rem;border-radius:999px}
+nav{display:flex;flex-wrap:wrap;gap:.15rem .1rem;flex:1;font-size:.85rem}
+nav a{text-decoration:none;color:var(--ink);padding:.25rem .38rem;border-radius:999px}
 nav a:hover{background:var(--p08)}
 nav a[aria-current="page"]{background:var(--p12);font-weight:600}
 .langsel{position:relative}
@@ -115,6 +115,8 @@ tbody tr:nth-child(even) td{background:var(--p04)}
 .logo{background:#fff;border:1px solid var(--p20);border-radius:10px;padding:.6rem .9rem;display:flex;align-items:center;justify-content:center;min-height:84px}
 .logo img{display:block;height:56px;width:auto;max-width:220px}
 .logo.eu img{height:72px;max-width:none}
+.logo.big{min-height:110px;padding:.7rem 1.1rem}
+.logo.big img{height:84px;max-width:300px}
 .note{font-size:.88rem;max-width:82ch}
 .btn{display:inline-block;background:var(--p);color:#fff;text-decoration:none;padding:.55rem 1.1rem;border-radius:999px;font-weight:600;margin:.3rem .4rem .3rem 0}
 .btn:hover{background:var(--ink)}
@@ -167,3 +169,11 @@ h3.sub{margin:1.6rem 0 .2rem;color:var(--ink)}
 .lb button{position:fixed;top:max(1rem,env(safe-area-inset-top));right:1rem;border:0;border-radius:999px;background:#fff;color:var(--ink);font-weight:600;font-size:.95rem;padding:.5rem 1rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}
 .lb button:hover{background:var(--p);color:#fff}
 body.lb-on{overflow:hidden}
+.card a.nthumb{display:block;margin:0 0 .7rem}
+.card a.nthumb img.thumb{margin:0;transition:opacity .15s}
+.card a.nthumb:hover img.thumb{opacity:.9}
+.card .minis{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin:-.3rem 0 .7rem}
+.card .minis img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;border:1px solid var(--p12)}
+.partner .plogos{display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem}
+.partner .plogos .plogo{margin-bottom:0}
+header.top .wrap{max-width:1320px}

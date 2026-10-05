@@ -144,3 +144,9 @@ h3.sub{margin:1.6rem 0 .2rem;color:var(--ink)}
 .partner li strong a{color:inherit;text-decoration:underline;text-decoration-color:var(--p35);text-underline-offset:3px}
 .partner li strong a:hover{color:var(--p);text-decoration-color:var(--p)}
 .card img.thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin:0 0 .7rem;border:1px solid var(--p12)}
+.talks li.has-thumb{display:grid;grid-template-columns:132px 1fr;gap:1rem;align-items:center}
+.talks .tthumb img{display:block;width:132px;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--p20)}
+.talks .tthumb:hover img{border-color:var(--p)}
+@media (max-width:520px){.talks li.has-thumb{grid-template-columns:96px 1fr;gap:.7rem}.talks .tthumb img{width:96px}}
+.talks li:not(.has-thumb){padding-left:148px}
+@media (max-width:520px){.talks li:not(.has-thumb){padding-left:103px}}

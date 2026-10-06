@@ -177,3 +177,50 @@ body.lb-on{overflow:hidden}
 .partner .plogos{display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem}
 .partner .plogos .plogo{margin-bottom:0}
 header.top .wrap{max-width:1320px}
+
+/* Partner logos centred and larger */
+.partner .plogo{justify-content:center;height:70px}
+.partner .plogo img{max-height:65px;max-width:225px}
+.partner .plogos{justify-content:center}
+/* Host institution logos +25% (funding section) */
+.logo.big.host{min-height:132px}
+.logo.big.host img{height:105px;max-width:375px}
+/* Mobile navigation */
+.navbtn{display:none;align-items:center;gap:.4rem;border:1px solid var(--p20);background:#fff;color:var(--ink);border-radius:999px;padding:.35rem .8rem;font:inherit;font-weight:600;font-size:.9rem;cursor:pointer}
+.navbtn .bars{display:inline-block;width:16px;height:2px;background:currentColor;position:relative}
+.navbtn .bars::before,.navbtn .bars::after{content:"";position:absolute;left:0;width:16px;height:2px;background:currentColor}
+.navbtn .bars::before{top:-5px}.navbtn .bars::after{top:5px}
+@media (max-width:1180px){
+  header.top .wrap{flex-wrap:wrap;gap:.6rem}
+  header.top .brand{flex:1}
+  header.top .brand img{height:36px}
+  .navbtn{display:inline-flex}
+  nav{display:none;order:3;flex:0 0 100%;flex-direction:column;gap:.1rem;font-size:1rem;padding:.4rem 0 .6rem;border-top:1px solid var(--p12)}
+  header.top.open nav{display:flex}
+  nav a{padding:.6rem .8rem;border-radius:10px}
+}
+/* Mobile tables: stacked cards */
+.cell-label{display:none}
+@media (max-width:640px){
+  table thead{display:none}
+  table,table tbody,table tr,table td{display:block;width:100%;min-width:0;box-sizing:border-box}
+  table{background:none}
+  tbody tr:nth-child(even) td{background:#fff}
+  table tr{border:1px solid var(--p20);border-radius:12px;margin:0 0 .8rem;background:#fff;overflow:hidden}
+  table td{border:0;border-bottom:1px solid var(--p12);padding:.55rem .8rem}
+  table td:last-child{border-bottom:0}
+  .cell-label{display:block;font-size:.75rem;font-weight:600;color:var(--mid);text-transform:uppercase;letter-spacing:.03em;margin-bottom:.15rem}
+}
+/* General mobile spacing */
+@media (max-width:520px){
+  h1{font-size:1.7rem}
+  .wrap{padding-left:1rem;padding-right:1rem}
+  .partners{grid-template-columns:1fr}
+}
+.partner .plogo{max-width:100%;min-width:0}
+.partner .plogo img{max-width:100%;height:auto;object-fit:contain}
+.partner .plogos .plogo{flex:1 1 0}
+.partner .plogos .plogo:first-child{flex:1.8 1 0}
+.partner .plogos{gap:.5rem}
+.logo.uk img{height:44px;max-width:180px}
+.logo.uk{min-height:84px}

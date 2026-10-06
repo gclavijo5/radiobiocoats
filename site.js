@@ -57,4 +57,28 @@
     document.addEventListener('keydown',onKey); b.focus();
   }
   links.forEach(function(a){ a.addEventListener('click',function(e){ if(e.metaKey||e.ctrlKey||e.shiftKey) return; e.preventDefault(); openLb(a); }); });
+  // Mobile menu
+  var nb=document.getElementById('navBtn'), hdr=document.querySelector('header.top');
+  if(nb&&hdr){
+    nb.addEventListener('click',function(){ var o=hdr.classList.toggle('open'); nb.setAttribute('aria-expanded',o?'true':'false'); });
+    document.querySelectorAll('#mainNav a').forEach(function(a){ a.addEventListener('click',function(){ hdr.classList.remove('open'); nb.setAttribute('aria-expanded','false'); }); });
+  }
+  // Centre a figure that is alone in the last row of a grid
+  function centreOrphans(){
+    document.querySelectorAll('.figs').forEach(function(g){
+      var items=[].filter.call(g.children,function(e){return e.tagName==='FIGURE';});
+      items.forEach(function(i){ i.style.gridColumn=''; i.style.justifySelf=''; i.style.width=''; });
+      if(items.length<2) return;
+      var cols=getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length;
+      if(cols<2) return;
+      var last=items[items.length-1], prev=items[items.length-2];
+      if(Math.abs(last.offsetTop-prev.offsetTop)>2){
+        var w=prev.getBoundingClientRect().width;
+        last.style.gridColumn='1 / -1'; last.style.justifySelf='center'; last.style.width=w+'px';
+      }
+    });
+  }
+  centreOrphans();
+  window.addEventListener('load',centreOrphans);
+  var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(centreOrphans,120); });
 })();

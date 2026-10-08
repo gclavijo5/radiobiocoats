@@ -318,3 +318,7 @@ body{font-size:var(--fs-base)}
 .yt .play{background:rgba(255,255,255,.6);color:var(--ink);box-shadow:0 4px 18px rgba(30,28,52,.25);transition:background .15s}
 .yt button:hover .play,.yt button:focus-visible .play{background:rgba(255,255,255,.85)}
 @media (prefers-reduced-motion:reduce){.yt .play{transition:none}}
+
+/* Figure captions justified (team photos, training, technique pages) */
+.fig figcaption,.fig figcaption span{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+.fig figcaption .credit{text-align:left}

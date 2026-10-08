@@ -63,6 +63,31 @@
     nb.addEventListener('click',function(){ var o=hdr.classList.toggle('open'); nb.setAttribute('aria-expanded',o?'true':'false'); });
     document.querySelectorAll('#mainNav a').forEach(function(a){ a.addEventListener('click',function(){ hdr.classList.remove('open'); nb.setAttribute('aria-expanded','false'); }); });
   }
+  // Techniques dropdown
+  document.querySelectorAll('.navgroup').forEach(function(g){
+    var b=g.querySelector('.navgroup-btn');
+    function set(o){ g.classList.toggle('open',o); b.setAttribute('aria-expanded',o?'true':'false'); }
+    b.addEventListener('click',function(e){ e.stopPropagation(); set(!g.classList.contains('open')); });
+    document.addEventListener('click',function(e){ if(!e.target.closest('.navgroup')) set(false); });
+    g.addEventListener('keydown',function(e){ if(e.key==='Escape'){ set(false); b.focus(); } });
+  });
+  // Show all / Show fewer
+  document.querySelectorAll('[data-collapse]').forEach(function(list){
+    var n=parseInt(list.getAttribute('data-collapse'),10);
+    var items=[].filter.call(list.children,function(e){ return e.tagName==='LI'||e.tagName==='ARTICLE'; });
+    var t=document.getElementById(list.getAttribute('data-toggle'));
+    if(!t||items.length<=n) return;
+    function set(open){
+      items.forEach(function(it,i){ it.hidden=!open&&i>=n; });
+      t.setAttribute('aria-expanded',open?'true':'false');
+      t.querySelector('.more').hidden=open; t.querySelector('.less').hidden=!open;
+    }
+    t.hidden=false; set(false);
+    t.addEventListener('click',function(){
+      var open=t.getAttribute('aria-expanded')!=='true'; set(open);
+      if(!open){ list.scrollIntoView({block:'start'}); }
+    });
+  });
   // Centre a figure that is alone in the last row of a grid
   function centreOrphans(){
     document.querySelectorAll('.figs').forEach(function(g){

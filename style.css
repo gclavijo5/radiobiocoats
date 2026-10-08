@@ -231,3 +231,90 @@ header.top .wrap{max-width:1320px}
 .partner .plogos{gap:.5rem}
 .logo.uk img{height:44px;max-width:180px}
 .logo.uk{min-height:84px}
+
+/* ==========================================================
+   Design refresh, October 2026 (v3.7)
+   Type scale: 14 / 16 / 18 / 22-26 / h1 px
+   ========================================================== */
+:root{--mid:#66638c;--fs-sm:.875rem;--fs-base:1rem;--fs-lg:1.125rem;--fs-h2:1.625rem}
+[hidden]{display:none!important}
+
+/* Type scale */
+nav{font-size:var(--fs-base)}
+.langmenu button,.navbtn,.yt button,.lb p,.lb button{font-size:var(--fs-base)}
+.band{padding:2.2rem 0 1.9rem}
+.band h1{max-width:none}
+.band p.lead{font-size:var(--fs-lg)}
+.band .meta{font-size:var(--fs-base)}
+.band .back{font-size:var(--fs-sm)}
+section h2{font-size:var(--fs-h2)}
+section h3,.tile h3,.card h3,.partner h3,h3.sub{font-size:var(--fs-lg)}
+.stat b.hl{font-size:var(--fs-lg)}
+.tile p,.stat span,.params dl,.fig figcaption,table,.partner li,.talks li,.pubs .pub-text{font-size:var(--fs-base)}
+.credit,.when,.note,.ids a,footer,.partner .place,.partner li span,.tile .pic span.tag{font-size:var(--fs-sm)}
+.cell-label{font-size:var(--fs-sm);text-transform:none;letter-spacing:0}
+@media (max-width:700px){
+  section h2{font-size:1.375rem}
+  .band h1,h1{font-size:1.875rem}
+}
+
+/* Justification: long paragraphs on wide screens only */
+p,figcaption,.stat,.pubs .pub-text,.talks li,.tile p,.contact-info p.bio{text-align:left;-webkit-hyphens:manual;hyphens:manual}
+@media (min-width:900px){
+  .prose p,.wrap > p,.feature p,.pubs .pub-text,.talks li > div,.talks li:not(.has-thumb),.contact-info p.bio{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+}
+
+/* Navigation: Techniques dropdown */
+.navgroup{position:relative;display:flex}
+.navgroup-btn{display:inline-flex;align-items:center;gap:.3rem;border:0;background:none;font:inherit;color:var(--ink);padding:.25rem .38rem;border-radius:999px;cursor:pointer}
+.navgroup-btn:hover,.navgroup.open .navgroup-btn{background:var(--p08)}
+.navgroup.current .navgroup-btn{background:var(--p12);font-weight:600}
+.navgroup-btn .caret{font-size:.75rem;opacity:.8}
+.navsub{display:none;position:absolute;left:0;top:100%;flex-direction:column;min-width:17rem;padding:.4rem;margin:0;background:#fff;border:1px solid var(--p20);border-radius:12px;box-shadow:0 10px 30px rgba(40,38,70,.18);z-index:30}
+.navsub a{padding:.5rem .7rem;border-radius:8px}
+.navgroup:hover .navsub,.navgroup:focus-within .navsub,.navgroup.open .navsub{display:flex}
+@media (max-width:1180px){
+  .navgroup{flex-direction:column}
+  .navgroup-btn{padding:.6rem .8rem;border-radius:10px;cursor:default;pointer-events:none;width:100%}
+  .navgroup-btn .caret{display:none}
+  .navsub{display:flex;position:static;min-width:0;padding:0 0 0 1rem;border:0;box-shadow:none;background:none}
+}
+
+/* Why it matters + highlights */
+.why-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:2.2rem;align-items:start}
+.points{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
+.points li{background:#fff;border:1px solid var(--p20);border-left:4px solid var(--p);border-radius:10px;padding:.8rem 1rem}
+.points strong{display:block;color:var(--ink);font-size:var(--fs-lg);margin-bottom:.2rem}
+@media (max-width:820px){.why-grid{grid-template-columns:1fr;gap:1.2rem}}
+
+/* Show all / Show fewer */
+.more-wrap{margin:1rem 0 0}
+
+/* Explore tiles: links aligned at the bottom */
+.tile .txt{display:flex;flex-direction:column;flex:1}
+.tile .go{margin-top:auto;padding-top:.6rem}
+
+/* Team page grids: five photos fit in one row */
+.figs.quad{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+
+/* Project video: own background, not the hero collage */
+.yt{background:linear-gradient(135deg,rgba(82,79,123,.97) 0%,rgba(89,86,128,.90) 55%,rgba(117,114,149,.80) 100%)}
+.yt button{background:transparent}
+.yt button:hover{background:rgba(255,255,255,.08)}
+button.btn{font:inherit;font-weight:600;cursor:pointer}
+
+/* Patent and Presentations headings match Publications */
+#publications h3{font-size:var(--fs-h2);margin:2.4rem 0 1rem}
+@media (max-width:700px){#publications h3{font-size:1.375rem}}
+
+/* News text justified, with hyphenation to avoid gaps */
+.news .card p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+
+/* Body text size set explicitly (16 px everywhere, also inside embedded previews) */
+body{font-size:var(--fs-base)}
+
+/* Conference names in Presentations: larger and more visible */
+.talks .when{font-size:var(--fs-base);font-weight:600;color:var(--ink);margin-bottom:.15rem}
+.talks .when{font-size:var(--fs-lg);font-weight:700;line-height:1.35;margin-bottom:.25rem}
+@media (max-width:700px){.talks .when{font-size:var(--fs-base)}}
+.talks .when{font-weight:500}

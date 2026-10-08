@@ -309,3 +309,6 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 
 /* News text justified, with hyphenation to avoid gaps */
 .news .card p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+
+/* Body text size set explicitly (16 px everywhere, also inside embedded previews) */
+body{font-size:var(--fs-base)}

@@ -312,3 +312,9 @@ body{font-size:var(--fs-base)}
 .talks .when{font-size:var(--fs-lg);font-weight:700;line-height:1.35;margin-bottom:.25rem}
 @media (max-width:700px){.talks .when{font-size:var(--fs-base)}}
 .talks .when{font-weight:500}
+
+/* Video: no visible label, semi-transparent play button */
+.yt button > span:not(.play){position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.yt .play{background:rgba(255,255,255,.6);color:var(--ink);box-shadow:0 4px 18px rgba(30,28,52,.25);transition:background .15s}
+.yt button:hover .play,.yt button:focus-visible .play{background:rgba(255,255,255,.85)}
+@media (prefers-reduced-motion:reduce){.yt .play{transition:none}}

@@ -128,4 +128,4 @@ footer a{color:#fff}
 p,figcaption,.stat,.pubs .pub-text,.talks li,.tile p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 html[lang="en"] body{hyphens:auto}
 .band h1,.band p.lead,.band .meta{text-align:left}
-@media (max-width:520px){.pubs .pub-text{text-align:left;hyphens:manual}.cover-name{font-size:.5rem}}
+@media (max-width:520px){.cover-name{font-size:.5rem}}

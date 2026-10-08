@@ -98,8 +98,15 @@ thead th{background:var(--p12);color:var(--ink)}
 tbody tr:nth-child(even) td{background:var(--p04)}
 
 /* Lists, news, logos */
-.pubs{padding-left:1.25rem;max-width:82ch}
-.pubs li{margin-bottom:.9rem}
+.pubs{list-style:none;padding:0;max-width:82ch}
+.pubs li{display:grid;grid-template-columns:1fr 152px;gap:1.2rem;align-items:center;padding:.6rem 0;border-bottom:1px dashed var(--p20)}
+.pubs .pub-text{min-width:0}
+.cover{justify-self:center;display:block;width:84px;aspect-ratio:3/4;border-radius:4px;overflow:hidden;border:1px solid var(--p20);box-shadow:0 3px 10px var(--p20);background:#fff;transition:transform .15s,border-color .15s}
+.cover:hover{transform:translateY(-2px);border-color:var(--p)}
+.cover img{display:block;width:100%;height:100%;object-fit:cover}
+.cover.cover-logo img{object-fit:contain;padding:.15rem}
+@media (max-width:520px){.pubs li{grid-template-columns:1fr 104px;gap:.8rem}.cover{width:64px}}
+@media (prefers-reduced-motion:reduce){.cover{transition:none}}
 .talks{list-style:none;padding:0;max-width:82ch}
 .talks li{padding:.6rem 0;border-bottom:1px dashed var(--p20)}
 .when{color:var(--mid);font-size:.86rem;display:block}
@@ -126,7 +133,7 @@ footer a{color:#fff}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tile{transition:none}}
 .stat b.hl{font-size:1.15rem;line-height:1.25;margin-bottom:.35rem}
 /* Justified text */
-p,figcaption,.stat,.pubs li,.talks li,.tile p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+p,figcaption,.stat,.pubs .pub-text,.talks li,.tile p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 body{hyphens:auto}
 .band h1,.band p.lead,.band .meta{text-align:left}
 

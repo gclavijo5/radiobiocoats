@@ -302,3 +302,10 @@ p,figcaption,.stat,.pubs .pub-text,.talks li,.tile p,.contact-info p.bio{text-al
 .yt button{background:transparent}
 .yt button:hover{background:rgba(255,255,255,.08)}
 button.btn{font:inherit;font-weight:600;cursor:pointer}
+
+/* Patent and Presentations headings match Publications */
+#publications h3{font-size:var(--fs-h2);margin:2.4rem 0 1rem}
+@media (max-width:700px){#publications h3{font-size:1.375rem}}
+
+/* News text justified, with hyphenation to avoid gaps */
+.news .card p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}

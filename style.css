@@ -260,9 +260,7 @@ section h3,.tile h3,.card h3,.partner h3,h3.sub{font-size:var(--fs-lg)}
 
 /* Justification: long paragraphs on wide screens only */
 p,figcaption,.stat,.pubs .pub-text,.talks li,.tile p,.contact-info p.bio{text-align:left;-webkit-hyphens:manual;hyphens:manual}
-@media (min-width:900px){
-  .prose p,.wrap > p,.feature p,.pubs .pub-text,.talks li > div,.talks li:not(.has-thumb),.contact-info p.bio{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
-}
+.prose p,.wrap > p,.feature p,.pubs .pub-text,.talks li > div,.talks li:not(.has-thumb),.contact-info p.bio{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 
 /* Navigation: Techniques dropdown */
 .navgroup{position:relative;display:flex}
@@ -297,10 +295,6 @@ p,figcaption,.stat,.pubs .pub-text,.talks li,.tile p,.contact-info p.bio{text-al
 /* Team page grids: five photos fit in one row */
 .figs.quad{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
 
-/* Project video: own background, not the hero collage */
-.yt{background:linear-gradient(135deg,rgba(82,79,123,.97) 0%,rgba(89,86,128,.90) 55%,rgba(117,114,149,.80) 100%)}
-.yt button{background:transparent}
-.yt button:hover{background:rgba(255,255,255,.08)}
 button.btn{font:inherit;font-weight:600;cursor:pointer}
 
 /* Patent and Presentations headings match Publications */

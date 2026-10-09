@@ -369,3 +369,5 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 @media (max-width:560px){.offer{grid-template-columns:1fr}}
 .offer-cta{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem}
 .offer-mail{font-weight:600}
+.offer-mail::before{content:"✉ ";font-weight:400}
+.offer-mail{font-size:var(--fs-lg)}

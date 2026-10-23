@@ -373,3 +373,8 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .offer-mail{font-size:var(--fs-lg)}
 .partner .plogos.wide-second .plogo:first-child{flex:1 1 0}
 .partner .plogos.wide-second .plogo:last-child{flex:2.4 1 0}
+
+.more-news{margin:1.2rem 0 0;text-align:right;font-weight:600}
+.more-news a{text-decoration:none}
+.more-news a:hover{text-decoration:underline}
+@media(min-width:900px){.latest-news{grid-template-columns:repeat(3,1fr)}}

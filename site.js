@@ -1,4 +1,12 @@
 (function(){
+  // Latest news strip: copy the 3 newest cards from the full news list
+  (function(){
+    var box=document.getElementById('latestNews'), src=document.querySelector('#news .news');
+    if(!box||!src) return;
+    [].filter.call(src.children,function(e){ return e.tagName==='ARTICLE'; }).slice(0,3).forEach(function(c){
+      var k=c.cloneNode(true); k.hidden=false; k.removeAttribute('id'); box.appendChild(k);
+    });
+  })();
   var html=document.documentElement, btn=document.getElementById('langBtn');
   var LANGS={en:{code:'EN',flag:'us',label:'Language'},de:{code:'DE',flag:'de',label:'Sprache'},sk:{code:'SK',flag:'sk',label:'Jazyk'},fr:{code:'FR',flag:'fr',label:'Langue'},es:{code:'ES',flag:'es',label:'Idioma'}};
   var menu=document.querySelector('.langmenu');

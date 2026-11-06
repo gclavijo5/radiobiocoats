@@ -383,3 +383,8 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .readmore{background:none;border:0;padding:.2rem 0;margin-top:.3rem;font:inherit;font-weight:600;color:var(--p);cursor:pointer;align-self:flex-start}
 .readmore:hover{text-decoration:underline}
 @media (min-width:1400px){.wrap{max-width:1320px}}
+.news .card{display:flex;flex-direction:column}
+.sharelink{margin-top:auto;align-self:flex-start;background:none;border:0;padding:.5rem 0 0;font:inherit;font-size:var(--fs-sm);color:var(--mid);cursor:pointer}
+.sharelink:hover{color:var(--p);text-decoration:underline}
+.news .card.flash{box-shadow:0 0 0 3px var(--p);transition:box-shadow .3s}
+.news .card[id]{scroll-margin-top:90px}

@@ -127,4 +127,28 @@
   centreOrphans();
   window.addEventListener('load',centreOrphans);
   var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(centreOrphans,120); });
+  // Share links: each news card can be opened directly with #id
+  (function(){
+    var T={en:['Copy link','Link copied ✓'],de:['Link kopieren','Link kopiert ✓'],sk:['Kopírovať odkaz','Odkaz skopírovaný ✓'],fr:['Copier le lien','Lien copié ✓'],es:['Copiar enlace','Enlace copiado ✓']};
+    function lab(i){ return Object.keys(T).map(function(k){ return '<span class="'+k+'">'+T[k][i]+'</span>'; }).join(''); }
+    document.querySelectorAll('.news .card[data-id]').forEach(function(c){
+      var b=document.createElement('button'); b.type='button'; b.className='sharelink';
+      b.innerHTML='🔗 <span class="sl-copy">'+lab(0)+'</span><span class="sl-done" hidden>'+lab(1)+'</span>';
+      b.addEventListener('click',function(){
+        var url=location.origin+location.pathname.replace(/index\.html$/,'')+'#'+c.getAttribute('data-id');
+        function done(){ b.querySelector('.sl-copy').hidden=true; b.querySelector('.sl-done').hidden=false; setTimeout(function(){ b.querySelector('.sl-copy').hidden=false; b.querySelector('.sl-done').hidden=true; },2000); }
+        if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done,function(){ prompt('',url); }); }
+        else { prompt('',url); }
+      });
+      c.appendChild(b);
+    });
+    function openHash(){
+      var id=decodeURIComponent(location.hash.slice(1)); if(!id) return;
+      var c=document.getElementById(id); if(!c||!c.classList.contains('card')) return;
+      if(c.hidden){ var t=document.getElementById('newsMore'); if(t) t.click(); c.hidden=false; }
+      var rm=c.querySelector('.readmore[aria-expanded="false"]'); if(rm) rm.click();
+      setTimeout(function(){ c.scrollIntoView({block:'start'}); c.classList.add('flash'); setTimeout(function(){ c.classList.remove('flash'); },2500); },60);
+    }
+    window.addEventListener('load',openHash); window.addEventListener('hashchange',openHash);
+  })();
 })();

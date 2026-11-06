@@ -388,3 +388,5 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .sharelink:hover{color:var(--p);text-decoration:underline}
 .news .card.flash{box-shadow:0 0 0 3px var(--p);transition:box-shadow .3s}
 .news .card[id]{scroll-margin-top:90px}
+.sharelink{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem .2rem 0;color:var(--mid)}
+.sharelink .sl-done{color:var(--p);font-weight:700}

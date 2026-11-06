@@ -133,10 +133,11 @@
     function lab(i){ return Object.keys(T).map(function(k){ return '<span class="'+k+'">'+T[k][i]+'</span>'; }).join(''); }
     document.querySelectorAll('.news .card[data-id]').forEach(function(c){
       var b=document.createElement('button'); b.type='button'; b.className='sharelink';
-      b.innerHTML='🔗 <span class="sl-copy">'+lab(0)+'</span><span class="sl-done" hidden>'+lab(1)+'</span>';
+      b.innerHTML='<svg class="sl-copy" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg><span class="sl-done" hidden>✓</span>'; b.setAttribute('aria-label','Copy link'); b.title=T[(document.documentElement.lang in T)?document.documentElement.lang:'en'][0];
+      b.addEventListener('mouseenter',function(){ var l=document.documentElement.lang; b.title=(T[l]||T.en)[0]; });
       b.addEventListener('click',function(){
         var url=location.origin+location.pathname.replace(/index\.html$/,'')+'#'+c.getAttribute('data-id');
-        function done(){ b.querySelector('.sl-copy').hidden=true; b.querySelector('.sl-done').hidden=false; setTimeout(function(){ b.querySelector('.sl-copy').hidden=false; b.querySelector('.sl-done').hidden=true; },2000); }
+        function done(){ b.querySelector('.sl-copy').style.display='none'; b.querySelector('.sl-done').hidden=false; setTimeout(function(){ b.querySelector('.sl-copy').style.display=''; b.querySelector('.sl-done').hidden=true; },2000); }
         if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done,function(){ prompt('',url); }); }
         else { prompt('',url); }
       });

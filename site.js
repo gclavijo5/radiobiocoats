@@ -7,6 +7,19 @@
       var k=c.cloneNode(true); k.hidden=false; k.removeAttribute('id'); box.appendChild(k);
     });
   })();
+  // Long news cards: show the first lines and a "Read more" toggle
+  (function(){
+    var T={en:['Read more','Show less'],de:['Weiterlesen','Weniger anzeigen'],sk:['Čítať ďalej','Zobraziť menej'],fr:['Lire la suite','Réduire'],es:['Leer más','Ver menos']};
+    function lab(i){ return Object.keys(T).map(function(k){ return '<span class="'+k+'">'+T[k][i]+'</span>'; }).join(''); }
+    document.querySelectorAll('.news .card > p').forEach(function(p){
+      var en=p.querySelector('.en'); if(!en||en.textContent.length<420) return;
+      p.classList.add('clamp');
+      var b=document.createElement('button'); b.type='button'; b.className='readmore'; b.setAttribute('aria-expanded','false');
+      b.innerHTML='<span class="rm-more">'+lab(0)+' ▾</span><span class="rm-less" hidden>'+lab(1)+' ▴</span>';
+      b.addEventListener('click',function(){ var o=p.classList.toggle('clamp')===false; b.setAttribute('aria-expanded',o?'true':'false'); b.querySelector('.rm-more').hidden=o; b.querySelector('.rm-less').hidden=!o; });
+      p.parentNode.insertBefore(b,p.nextSibling);
+    });
+  })();
   var html=document.documentElement, btn=document.getElementById('langBtn');
   var LANGS={en:{code:'EN',flag:'us',label:'Language'},de:{code:'DE',flag:'de',label:'Sprache'},sk:{code:'SK',flag:'sk',label:'Jazyk'},fr:{code:'FR',flag:'fr',label:'Langue'},es:{code:'ES',flag:'es',label:'Idioma'}};
   var menu=document.querySelector('.langmenu');

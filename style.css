@@ -382,3 +382,5 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .news .card > p.clamp{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:7;line-clamp:7;overflow:hidden}
 .readmore{background:none;border:0;padding:.2rem 0;margin-top:.3rem;font:inherit;font-weight:600;color:var(--p);cursor:pointer;align-self:flex-start}
 .readmore:hover{text-decoration:underline}
+.train-figs figcaption.clamp{flex:none;padding-bottom:0;margin-bottom:.8rem;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;line-clamp:6;overflow:hidden}
+.train-figs .readmore{margin:0 1rem .8rem;align-self:flex-start}

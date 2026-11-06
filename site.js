@@ -129,19 +129,37 @@
   var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(centreOrphans,120); });
   // Share links: each news card can be opened directly with #id
   (function(){
-    var T={en:['Copy link','Link copied ✓'],de:['Link kopieren','Link kopiert ✓'],sk:['Kopírovať odkaz','Odkaz skopírovaný ✓'],fr:['Copier le lien','Lien copié ✓'],es:['Copiar enlace','Enlace copiado ✓']};
-    function lab(i){ return Object.keys(T).map(function(k){ return '<span class="'+k+'">'+T[k][i]+'</span>'; }).join(''); }
+    var T={en:['Share','Copy','Copied ✓','E-mail'],de:['Teilen','Kopieren','Kopiert ✓','E-Mail'],sk:['Zdieľať','Kopírovať','Skopírované ✓','E-mail'],fr:['Partager','Copier','Copié ✓','E-mail'],es:['Compartir','Copiar','Copiado ✓','Correo']};
+    function t(i){ var l=document.documentElement.lang; return (T[l]||T.en)[i]; }
+    var ICON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>';
+    var COPY='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+    var openPop=null;
+    function closePop(){ if(openPop){ openPop.remove(); openPop=null; } }
+    document.addEventListener('click',function(e){ if(openPop&&!e.target.closest('.sharepop')&&!e.target.closest('.sharelink')) closePop(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') closePop(); });
     document.querySelectorAll('.news .card[data-id]').forEach(function(c){
-      var b=document.createElement('button'); b.type='button'; b.className='sharelink';
-      b.innerHTML='<svg class="sl-copy" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg><span class="sl-done" hidden>✓</span>'; b.setAttribute('aria-label','Copy link'); b.title=T[(document.documentElement.lang in T)?document.documentElement.lang:'en'][0];
-      b.addEventListener('mouseenter',function(){ var l=document.documentElement.lang; b.title=(T[l]||T.en)[0]; });
-      b.addEventListener('click',function(){
+      var wrap=document.createElement('div'); wrap.className='sharewrap';
+      var b=document.createElement('button'); b.type='button'; b.className='sharelink'; b.innerHTML=ICON; b.setAttribute('aria-haspopup','true');
+      b.addEventListener('mouseenter',function(){ b.title=t(0); b.setAttribute('aria-label',t(0)); });
+      b.addEventListener('click',function(e){
+        e.stopPropagation(); if(openPop&&openPop.parentNode===wrap){ closePop(); return; } closePop();
         var url=location.origin+location.pathname.replace(/index\.html$/,'')+'#'+c.getAttribute('data-id');
-        function done(){ b.querySelector('.sl-copy').style.display='none'; b.querySelector('.sl-done').hidden=false; setTimeout(function(){ b.querySelector('.sl-copy').style.display=''; b.querySelector('.sl-done').hidden=true; },2000); }
-        if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done,function(){ prompt('',url); }); }
-        else { prompt('',url); }
+        var h=c.querySelector('h3 .'+document.documentElement.lang)||c.querySelector('h3'); var title=(h?h.textContent:'RADIOBIOCOATS').trim();
+        var pop=document.createElement('div'); pop.className='sharepop'; pop.setAttribute('role','dialog');
+        pop.innerHTML='<div class="sp-row"><input type="text" readonly value="'+url+'"><button type="button" class="sp-copy" title="'+t(1)+'">'+COPY+'<span>'+t(1)+'</span></button></div>'
+          +'<div class="sp-links"><a target="_blank" rel="noopener" href="mailto:?subject='+encodeURIComponent(title+' – RADIOBIOCOATS')+'&body='+encodeURIComponent(title+'\n'+url)+'">✉ '+t(3)+'</a>'
+          +'<a target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent(title+' '+url)+'">WhatsApp</a>'
+          +'<a target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(url)+'">LinkedIn</a></div>';
+        var inp=pop.querySelector('input'), cb=pop.querySelector('.sp-copy');
+        inp.addEventListener('focus',function(){ inp.select(); });
+        cb.addEventListener('click',function(){
+          function ok(){ cb.querySelector('span').textContent=t(2); setTimeout(function(){ cb.querySelector('span').textContent=t(1); },1800); }
+          if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(ok,function(){ inp.select(); document.execCommand('copy'); ok(); }); }
+          else { inp.select(); document.execCommand('copy'); ok(); }
+        });
+        wrap.appendChild(pop); openPop=pop;
       });
-      c.appendChild(b);
+      wrap.appendChild(b); c.appendChild(wrap);
     });
     function openHash(){
       var id=decodeURIComponent(location.hash.slice(1)); if(!id) return;

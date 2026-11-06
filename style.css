@@ -390,3 +390,11 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .news .card[id]{scroll-margin-top:90px}
 .sharelink{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem .2rem 0;color:var(--mid)}
 .sharelink .sl-done{color:var(--p);font-weight:700}
+.sharewrap{position:relative;margin-top:auto;align-self:flex-start}
+.sharepop{position:absolute;left:0;bottom:calc(100% + .4rem);z-index:20;width:min(320px,80vw);background:#fff;border:1px solid var(--p20);border-radius:12px;box-shadow:0 8px 24px rgba(40,36,80,.18);padding:.7rem}
+.sp-row{display:flex;gap:.4rem}
+.sp-row input{flex:1;min-width:0;font:inherit;font-size:.82rem;padding:.35rem .5rem;border:1px solid var(--p20);border-radius:8px;color:var(--ink);background:var(--p04)}
+.sp-copy{display:inline-flex;align-items:center;gap:.3rem;font:inherit;font-size:.82rem;font-weight:600;padding:.35rem .6rem;border:0;border-radius:8px;background:var(--p);color:#fff;cursor:pointer;white-space:nowrap}
+.sp-links{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
+.sp-links a{flex:1;text-align:center;font-size:.85rem;font-weight:600;padding:.35rem .4rem;border-radius:8px;background:var(--p08);text-decoration:none}
+.sp-links a:hover{background:var(--p12)}

@@ -378,3 +378,4 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .more-news a{text-decoration:none}
 .more-news a:hover{text-decoration:underline}
 @media(min-width:900px){.latest-news{grid-template-columns:repeat(3,1fr)}}
+#latest .wrap{max-width:1320px}

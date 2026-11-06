@@ -20,25 +20,6 @@
       p.parentNode.insertBefore(b,p.nextSibling);
     });
   })();
-  // Training captions: clamp to 6 lines with a toggle when they overflow
-  window.rbClampCaps=function(){
-    var T={en:['Read more','Show less'],de:['Weiterlesen','Weniger anzeigen'],sk:['Čítať ďalej','Zobraziť menej'],fr:['Lire la suite','Réduire'],es:['Leer más','Ver menos']};
-    function lab(i){ return Object.keys(T).map(function(k){ return '<span class="'+k+'">'+T[k][i]+'</span>'; }).join(''); }
-    document.querySelectorAll('.train-figs figcaption').forEach(function(c){
-      var b=c.nextElementSibling&&c.nextElementSibling.classList.contains('readmore')?c.nextElementSibling:null;
-      if(b&&b.getAttribute('aria-expanded')==='true') return;
-      c.classList.add('clamp');
-      var over=c.scrollHeight>c.clientHeight+2;
-      if(!over){ c.classList.remove('clamp'); if(b) b.hidden=true; return; }
-      if(!b){
-        b=document.createElement('button'); b.type='button'; b.className='readmore'; b.setAttribute('aria-expanded','false');
-        b.innerHTML='<span class="rm-more">'+lab(0)+' ▾</span><span class="rm-less" hidden>'+lab(1)+' ▴</span>';
-        b.addEventListener('click',function(){ var o=c.classList.toggle('clamp')===false; b.setAttribute('aria-expanded',o?'true':'false'); b.querySelector('.rm-more').hidden=o; b.querySelector('.rm-less').hidden=!o; });
-        c.parentNode.insertBefore(b,c.nextSibling);
-      }
-      b.hidden=false;
-    });
-  };
   var html=document.documentElement, btn=document.getElementById('langBtn');
   var LANGS={en:{code:'EN',flag:'us',label:'Language'},de:{code:'DE',flag:'de',label:'Sprache'},sk:{code:'SK',flag:'sk',label:'Jazyk'},fr:{code:'FR',flag:'fr',label:'Langue'},es:{code:'ES',flag:'es',label:'Idioma'}};
   var menu=document.querySelector('.langmenu');
@@ -48,7 +29,6 @@
     if(btn){ btn.querySelector('.code').textContent=LANGS[l].code; btn.querySelector('img').src='assets/img/flags/'+LANGS[l].flag+'.svg'; btn.setAttribute('aria-label',LANGS[l].label+': '+LANGS[l].code); }
     if(menu) menu.querySelectorAll('button[data-lang]').forEach(function(b){ b.setAttribute('aria-checked', b.getAttribute('data-lang')===l ? 'true':'false'); });
     try{ localStorage.setItem('rbLang',l); }catch(e){}
-    if(window.rbClampCaps) setTimeout(window.rbClampCaps,0);
   }
   function openMenu(o){ if(!menu||!btn) return; menu.hidden=!o; btn.setAttribute('aria-expanded',o?'true':'false'); if(o){ var cur=menu.querySelector('button[aria-checked="true"]'); (cur||menu.querySelector('button')).focus(); } }
   var saved=null; try{ saved=localStorage.getItem('rbLang'); }catch(e){}
@@ -145,8 +125,6 @@
     });
   }
   centreOrphans();
-  window.addEventListener('load',window.rbClampCaps);
-  var rc; window.addEventListener('resize',function(){ clearTimeout(rc); rc=setTimeout(window.rbClampCaps,150); });
   window.addEventListener('load',centreOrphans);
   var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(centreOrphans,120); });
 })();

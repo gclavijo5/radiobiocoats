@@ -412,3 +412,4 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .pc-title{font-size:.88rem;line-height:1.3}
 .pc-meta{font-size:.78rem}
 .pc-go{font-size:.85rem;margin-top:0}
+.paper-card{max-width:none}

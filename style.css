@@ -398,3 +398,11 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .sp-links{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
 .sp-links a{flex:1;text-align:center;font-size:.85rem;font-weight:600;padding:.35rem .4rem;border-radius:8px;background:var(--p08);text-decoration:none}
 .sp-links a:hover{background:var(--p12)}
+.paper-card{display:flex;gap:1rem;align-items:center;margin-top:1.4rem;padding:.9rem;background:#fff;border:1px solid var(--p20);border-radius:12px;text-decoration:none;color:inherit;max-width:520px;transition:box-shadow .2s,border-color .2s}
+.paper-card:hover{border-color:var(--p35);box-shadow:0 6px 18px rgba(40,36,80,.12)}
+.paper-card img{width:84px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:6px;flex:none;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.pc-txt{display:flex;flex-direction:column;gap:.2rem;min-width:0}
+.pc-kicker{font-size:var(--fs-sm);font-weight:600;color:var(--mid);text-transform:uppercase;letter-spacing:.04em}
+.pc-title{font-weight:600;line-height:1.35;color:var(--ink);hyphens:none;-webkit-hyphens:none;text-align:left}
+.pc-meta{font-size:var(--fs-sm);color:var(--mid)}
+.pc-go{font-weight:600;color:var(--p);margin-top:.2rem}

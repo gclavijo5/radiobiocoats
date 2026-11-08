@@ -406,3 +406,9 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .pc-title{font-weight:600;line-height:1.35;color:var(--ink);hyphens:none;-webkit-hyphens:none;text-align:left}
 .pc-meta{font-size:var(--fs-sm);color:var(--mid)}
 .pc-go{font-weight:600;color:var(--p);margin-top:.2rem}
+.paper-card{gap:.75rem;padding:.6rem .75rem;max-width:400px;margin-top:1rem}
+.paper-card img{width:52px}
+.pc-kicker{font-size:.72rem}
+.pc-title{font-size:.88rem;line-height:1.3}
+.pc-meta{font-size:.78rem}
+.pc-go{font-size:.85rem;margin-top:0}

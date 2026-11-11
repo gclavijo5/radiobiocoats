@@ -415,3 +415,5 @@ abbr[title]{text-decoration:underline dotted;cursor:help}
 .paper-card{max-width:none}
 .paper-card img{width:72px}
 .paper-card img{width:90px}
+#video .yt{margin-left:auto;margin-right:auto}
+#video .note{text-align:center;max-width:840px;margin-left:auto;margin-right:auto}
